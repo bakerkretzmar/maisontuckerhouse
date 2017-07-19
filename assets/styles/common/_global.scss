@@ -1,0 +1,26 @@
+.embed-container {
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+  overflow: hidden;
+  & iframe,
+  & object {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+
+.carousel-inner {
+  height: 400px; // Set breakpoints!
+  .carousel-item {
+    height: 400px;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
