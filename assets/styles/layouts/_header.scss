@@ -1,15 +1,23 @@
 header.banner {
 
 
+  .branding-test {
+    display: block;
+    height: 140px;
+    width: 220px;
+    background: #f44;
+  }
+
+
   .logo {
     img { height: 100px; }
   }
 
-  .navbar-toggler {
-    top: 2.6rem;
-  }
+  // .navbar-toggler {
+  //   top: 2.6rem;
+  // }
 
-  #tuckerNav {
+  #tuckerNavOld {
     & > ul {
       font-weight: 600;
       font-size: 20px;
