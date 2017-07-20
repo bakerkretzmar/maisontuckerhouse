@@ -78,7 +78,7 @@ add_filter( 'the_content', __NAMESPACE__ . '\\responsive_embeds' );
 
 // Galleries!?
 
-// Remove built in shortcode
+// Remove built-in shortcode
 remove_shortcode( 'gallery', 'gallery_shortcode' );
 
 // Replace with custom shortcode
@@ -208,8 +208,8 @@ function shortcode_gallery($attr) {
   $output .= '<span class="sr-only">Next</span>';
   $output .= '</a>';
   $output .= '</div>';
-  $output .= '</dl>';
-  $output .= '</div>';
+  // $output .= '</div>';
+  // $output .= '</div>';
 
   return $output;
 }

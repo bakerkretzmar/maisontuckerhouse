@@ -1,0 +1,20 @@
+footer.content-info {// Main site footer
+
+  background-color: $gray-lighter;
+
+  .container {
+
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    .row {
+
+      .widget {
+        @extend .col-sm;
+      }
+
+    }
+
+  }
+
+}
