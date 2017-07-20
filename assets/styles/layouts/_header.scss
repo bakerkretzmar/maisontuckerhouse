@@ -48,41 +48,5 @@ header.banner {
     }
   }
 
-  #tuckerNavOld {
-    & > ul {
-      font-weight: 600;
-      font-size: 20px;
-      text-transform: uppercase;
-      @extend .navbar-nav;
-      width: 100%;
-      & > li {
-        @extend .nav-item;
-        margin-right: 1rem;
-        & > a {
-          @extend .nav-link;
-        }
-        &.menu-item-has-children {
-          @extend .dropdown;
-          & > a {
-            @extend .nav-link;
-            @extend .dropdown-toggle;
-          }
-          & > ul {
-            @extend .dropdown-menu;
-            & > li {
-              @extend .dropdown-item;
-            }
-          }
-        }
-        &.menu-donate {
-          @extend .ml-auto;
-          @extend .btn;
-          @extend .btn-secondary;
-        }
-      }
-    }
-  }
-
-
 
 }

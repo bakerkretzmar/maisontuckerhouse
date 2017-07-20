@@ -1,5 +1,5 @@
 <header class="banner">
-  <div class="container">
+  <!-- <div class="container">
     <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
     <nav class="nav-primary">
       <?php
@@ -8,9 +8,10 @@
       endif;
       ?>
     </nav>
-  </div>
+  </div> -->
 
-  <nav class="navbar navbar-toggleable-sm navbar-light bg-faded">
+  <!-- Copied and pasted from Bootstrap components page. -->
+  <!-- <nav class="navbar navbar-toggleable-sm navbar-light bg-faded">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#tuckerNav2" aria-controls="tuckerNav2" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -44,7 +45,7 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
-  </nav>
+  </nav> -->
 
   <nav class="navbar navbar-toggleable-sm navbar-light bg-faded">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#tuckerNav" aria-controls="tuckerNav" aria-expanded="false" aria-label="Toggle navigation">
