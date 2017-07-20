@@ -3,9 +3,9 @@ header.banner {
 
   .branding-test {
     display: block;
-    height: 140px;
-    width: 220px;
-    background: #f44;
+    height: 60px;
+    width: 200px;
+    background: #d44;
   }
 
 
@@ -16,6 +16,37 @@ header.banner {
   // .navbar-toggler {
   //   top: 2.6rem;
   // }
+
+  #tuckerNav {
+    .navbar-nav {
+      margin-right: auto;
+      & > li.menu-item {
+        @extend .nav-item;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        & > a {
+          @extend .nav-link;
+        }
+      }
+      & > li.menu-item-has-children {
+        @extend .dropdown;
+        & > a {
+          @extend .nav-link;
+          @extend .dropdown-toggle;
+        }
+        & > ul.sub-menu {
+          @extend .dropdown-menu;
+          @media (max-width: 767px) {
+            position: static;
+            float: none;
+          }
+          & > li.menu-item {
+            @extend .dropdown-item;
+          }
+        }
+      }
+    }
+  }
 
   #tuckerNavOld {
     & > ul {
