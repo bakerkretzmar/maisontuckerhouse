@@ -1,22 +1,24 @@
 header.banner {
 
 
-  .branding-test {
+  text-transform: uppercase !important;
+
+
+  .navbar-brand {
     display: block;
-    height: 60px;
-    width: 200px;
-    background: #d44;
-  }
-
-
-  .logo {
-    img { height: 100px; }
+    height: 108px;
+    width: 210px;
+    min-width: 210px;
+    background-image: url($main-logo-path);
+    background-size: contain;
   }
 
   // .navbar-toggler {
   //   top: 2.6rem;
   // }
 
+
+  // This works, don't touch it!!
   #tuckerNav {
     .navbar-nav {
       margin-right: auto;
@@ -36,7 +38,7 @@ header.banner {
         }
         & > ul.sub-menu {
           @extend .dropdown-menu;
-          @media (max-width: 767px) {
+          @include media-breakpoint-down(md) {
             position: static;
             float: none;
           }
@@ -45,6 +47,44 @@ header.banner {
           }
         }
       }
+    }
+  }// That works, don't touch it!!
+
+  // Push the "Donate" and "Contact" buttons to the far right
+  @include media-breakpoint-up(md) {
+    .navbar-nav { width: 100%; }
+    li.menu-donate {
+      margin-left: auto;
+      margin-right: 1rem;
+    }
+  }
+
+  .navbar-nav { align-items: center; }
+  li.menu-donate,
+  li.menu-contact {
+    @extend .btn;
+    @extend .btn-primary;
+    padding-top: 0.25rem !important;
+    padding-right: 1.25rem !important;
+    padding-bottom: 0.25em !important;
+    padding-left: 1.25rem !important;
+    border-radius: 0.5rem;
+    background-color: $brand-secondary;
+    border: 2px solid $brand-secondary;
+    &:hover, &:active {
+      background-color: darken($brand-secondary, 10%);
+      border-color: darken($brand-secondary, 10%);
+    }
+  }
+  li.menu-donate {
+    a { color: $white; }
+  }
+  li.menu-contact {
+    a { color: $brand-secondary; }
+    background: none;
+    &:hover {
+      a { color: darken($brand-secondary, 10%); }
+      background: none;
     }
   }
 

@@ -19,12 +19,15 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+
+        // Enhance Bootstrap toggling
         $('#tuckerNav li.menu-item-has-children > a').attr({
           "data-toggle": "dropdown",
           "role": "button",
           "aria-haspopup": "true",
           "aria-expanded": "false"
-        }).attr();
+        });
+
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
