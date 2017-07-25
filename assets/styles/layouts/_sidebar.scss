@@ -1,0 +1,15 @@
+
+section.widget {
+
+
+  // FontAwesome icons
+  .social {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    & > a + a { margin-left: .75rem; }
+    .fa-facebook-official { color: #3b5998; }
+    .fa-twitter { color: #1da1f2; }
+    .fa-instagram { color: #262626; }
+  }
+}

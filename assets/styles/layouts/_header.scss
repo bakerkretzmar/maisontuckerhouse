@@ -1,9 +1,13 @@
 header.banner {
 
-
+  // Text styles
+  font-family: $tucker-interface;
+  font-weight: 600;
   text-transform: uppercase !important;
+  letter-spacing: .4px;
 
 
+  // Logo styles
   .navbar-brand {
     display: block;
     height: 108px;
@@ -18,6 +22,7 @@ header.banner {
   // }
 
 
+  // Menu layout
   // This works, don't touch it!!
   #tuckerNav {
     .navbar-nav {
@@ -43,23 +48,43 @@ header.banner {
             float: none;
           }
           & > li.menu-item {
+            font-weight: 600;
             @extend .dropdown-item;
+            a:hover { text-decoration: none; }
           }
         }
       }
     }
   }// That works, don't touch it!!
 
+
+  // Toggler
+  .navbar-toggler {
+    position: absolute;
+    align-self: flex-end;
+    margin-top: 2rem;
+  }
+
+
   // Push the "Donate" and "Contact" buttons to the far right
-  @include media-breakpoint-up(md) {
-    .navbar-nav { width: 100%; }
+  @include media-breakpoint-up(lg) {
+    .navbar-nav {
+      align-items: center;
+      width: 100%;
+    }
     li.menu-donate {
       margin-left: auto;
       margin-right: 1rem;
     }
   }
+  @include media-breakpoint-down(md) {
+    li.menu-donate {
+      margin-bottom: 1rem;
+    }
+  }
 
-  .navbar-nav { align-items: center; }
+
+  // Buttons
   li.menu-donate,
   li.menu-contact {
     @extend .btn;
@@ -69,24 +94,59 @@ header.banner {
     padding-bottom: 0.25em !important;
     padding-left: 1.25rem !important;
     border-radius: 0.5rem;
-    background-color: $brand-secondary;
-    border: 2px solid $brand-secondary;
+    font-weight: 700;
+    background-color: $tucker-green;
+    border: 2px solid $tucker-green;
     &:hover, &:active {
-      background-color: darken($brand-secondary, 10%);
-      border-color: darken($brand-secondary, 10%);
+      background-color: darken($tucker-green, 10%);
+      border-color: darken($tucker-green, 10%);
     }
+    &.active { border-color: $tucker-green; }
   }
   li.menu-donate {
     a { color: $white; }
   }
   li.menu-contact {
-    a { color: $brand-secondary; }
+    a { color: $tucker-green; }
     background: none;
     &:hover {
-      a { color: darken($brand-secondary, 10%); }
+      a { color: darken($tucker-green, 10%); }
       background: none;
     }
   }
+
+
+  // Active item
+  li.active {
+    background-color: $gray-lighter !important;
+    &.menu-item-has-children,
+    &.menu-donate,
+    &.menu-contact { background-color: transparent !important; }
+  }
+
+
+  // Toggle arrows
+  a[data-toggle="dropdown"],
+  .dropdown-toggle {
+    &::after {
+      font-family: "FontAwesome";
+      content: "\f0d7";
+      display: inline-block;
+      width: auto;
+      height: .6rem;
+      margin-left: .25rem;
+      margin-top: -1.2rem;
+      vertical-align: middle;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+    }
+    &[aria-expanded="true"]::after {
+      content: "\f0d8";
+      margin-top: -1.4rem;
+    }
+  }
+
 
 
 }

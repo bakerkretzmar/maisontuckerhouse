@@ -48,11 +48,11 @@
   </nav> -->
 
   <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#tuckerNav" aria-controls="tuckerNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#tuckerNav" aria-controls="tuckerNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <a class="navbar-brand" href="#"></a>
+    <a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>"></a>
 
     <div class="collapse navbar-collapse" id="tuckerNav">
       <?php

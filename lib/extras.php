@@ -72,7 +72,14 @@ function responsive_embeds($content) {
 }
 add_filter( 'the_content', __NAMESPACE__ . '\\responsive_embeds' );
 
-
+/**
+ * Don't automatically wrap <img> in <p></p>
+ */
+function img_unautop($pee) {
+    $pee = preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '$1', $pee);
+    return $pee;
+}
+add_filter( 'the_content', __NAMESPACE__ . '\\img_unautop', 30 );
 
 
 
