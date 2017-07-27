@@ -1,20 +1,68 @@
-footer.content-info {// Main site footer
+footer.content-info { // Main site footer
 
-  background-color: $gray-lighter;
+  background-color: darken($tucker-green, 26%);
 
   .container {
-
     padding-top: 2rem;
     padding-bottom: 2rem;
 
     .row {
-
       .widget {
         @extend .col-sm;
+        color: $gray-lighter;
+        a {
+          color: $gray-lighter;
+          &:hover { text-decoration: underline; }
+        }
+
+        .social {
+          a {
+            color: $gray-lighter;
+            &:hover {
+              background-color: $gray-lighter;
+              text-decoration: none !important;
+              i.fa { color: darken($tucker-green, 26%); }
+            }
+          }
+          i.fa { color: $gray-lighter; }
+        }
+      }
+    }
+
+  }
+
+}
+
+
+div.colophon { // Colophon (the very very bottom)
+
+
+  background-color: #212222;
+
+  .container {
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    .row {
+
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        color: $gray-light;
+        font-family: $tucker-interface;
+        font-size: .75rem;
+        margin: 0;
+        a {
+          color: darken($tucker-green, 10%);
+          &:hover { color: darken($tucker-green, 15%); }
+        }
       }
 
     }
 
   }
+
 
 }

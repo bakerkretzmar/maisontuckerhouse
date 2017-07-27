@@ -7,18 +7,22 @@ $main-logo-path: "../images/TH-Logo-01.png";
 
 // Colors
 $tucker-red:         #bf230f;
-$tucker-green:       #41ac15;
+$tucker-green:       #339c08;
 
 // Fonts
 $tucker-serif: "Museo Sans";
 $tucker-sans: "Calluna Sans";
 $tucker-interface: "Proxima Nova";
 
+// Miscellaneous Bootstrap Overrides
+$link-color: $tucker-green;
+$link-hover-color: darken($link-color, 10%);
+$link-hover-decoration: none;
 
 // // Fonts
 // $font-family-sans-serif: "Calluna Sans";
 // $font-family-serif:      "Museo Sans";
 // $font-family-monospace:  "Soleil";
-// $font-family-base:       $font-family-monospace;
+$font-family-base: $tucker-interface;
 //
 // $headings-font-family:   $font-family-sans-serif;

@@ -1,15 +1,43 @@
+aside.sidebar {
 
-section.widget {
+  & > * + * { margin-top: 1rem; }
 
+}
 
-  // FontAwesome icons
-  .social {
-    text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    & > a + a { margin-left: .75rem; }
-    .fa-facebook-official { color: #3b5998; }
-    .fa-twitter { color: #1da1f2; }
-    .fa-instagram { color: #262626; }
+section.widget_search {
+  form[role="search"] { justify-content: center; }
+}
+
+section.widget .social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  & > a + a { margin-left: .375rem; }
+  @include media-breakpoint-up(lg) {
+    & > a + a { margin-left: 1.25rem; }
   }
+  @include media-breakpoint-only(sm) {
+    flex-direction: column;
+    & > a + a { margin-top: 1rem; }
+  }
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $tucker-red;
+    border: 2px solid;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    transition: $btn-transition;
+    &:hover {
+      background-color: $tucker-red;
+      i.fa { color: $white; }
+    }
+  }
+  i.fa { color: $tucker-red; }
+  .fa-facebook { font-size: 1.5rem; }
+  .fa-twitter { font-size: 1.5rem; }
+  .fa-instagram { font-size: 1.75rem; }
 }

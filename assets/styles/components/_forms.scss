@@ -4,12 +4,25 @@
 }
 .search-form label {
   font-weight: normal;
+  margin: .125rem;
   @extend .form-group;
+  flex-grow: 1;
 }
 .search-form .search-field {
   @extend .form-control;
+  flex-grow: 1;
+  font-family: $tucker-interface;
+  &:focus { border-color: $tucker-green; }
 }
 .search-form .search-submit {
   @extend .btn;
-  @extend .btn-secondary;
+  @extend .btn-primary;
+  margin: .125rem;
+  font-family: $tucker-interface;
+  background-color: $tucker-green;
+  border-color: $tucker-green;
+  &:hover, &:active {
+    background-color: darken($tucker-green, 10%);
+    border-color: darken($tucker-green, 10%);
+  }
 }

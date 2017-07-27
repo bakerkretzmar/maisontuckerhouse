@@ -102,16 +102,21 @@ header.banner {
       border-color: darken($tucker-green, 10%);
     }
     &.active { border-color: $tucker-green; }
+    transition: $btn-transition;
   }
   li.menu-donate {
     a { color: $white; }
   }
   li.menu-contact {
-    a { color: $tucker-green; }
+    a {
+      color: $tucker-green;
+      transition: $btn-transition;
+    }
     background: none;
-    &:hover {
-      a { color: darken($tucker-green, 10%); }
+    &:hover, &:active {
       background: none;
+      border-color: darken($tucker-green, 10%);
+      a { color: darken($tucker-green, 10%); }
     }
   }
 
