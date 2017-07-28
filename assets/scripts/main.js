@@ -28,9 +28,71 @@
           "aria-expanded": "false"
         });
 
+        if ($('.gallery').length) {
+          var galleries = document.querySelectorAll('.gallery');
+          for (g = 0; g < galleries.length; g++) {
+            var slider = "siemaSlider-" + g;
+            galleries[g].classList.add('siema');
+            galleries[g].classList.add(slider);
+          }
+        }
+
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
+
+        if ($('.gallery').length) {
+          var siemas = document.querySelectorAll('.siema');
+
+          Siema.prototype.addArrows = function() {
+            var _this = this; // ES5 workaround
+            // make buttons & append them inside Siema's container
+            this.prevArrow = document.createElement('p');
+            this.nextArrow = document.createElement('p');
+            this.prevArrow.innerHTML = '<span>\uf104</span>';
+            this.nextArrow.innerHTML = '<span>\uf105</span>';
+            this.prevArrow.classList.add('prevArrow');
+            this.nextArrow.classList.add('nextArrow');
+            this.selector.appendChild(this.prevArrow);
+            this.selector.appendChild(this.nextArrow);
+
+            this.prevArrow.addEventListener('click', function() {
+              return _this.prev();
+            });
+            this.nextArrow.addEventListener('click', function() {
+              return _this.next();
+            });
+          };
+
+          Siema.prototype.autoPlay = function() {
+            var _this = this;
+
+            this.autoPlay = setInterval(function() {
+              return _this.next();
+            }, 5000);
+
+            this.selector.addEventListener('mouseover', function() {
+              clearInterval(_this.autoPlay);
+            });
+            this.selector.addEventListener('mouseout', function() {
+              _this.autoPlay = setInterval(function() {
+                return _this.next();
+              }, 5000);
+            });
+          };
+
+          for (i = 0; i < siemas.length; i++) {
+            var instance = new Siema({
+              selector: siemas[i],
+              loop: true,
+              duration: 300
+            });
+            instance.addArrows();
+            instance.autoPlay();
+          }
+        } // endif ($('.gallery').length)
+
+
       }
     },
     // Home page

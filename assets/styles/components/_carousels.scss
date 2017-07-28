@@ -1,10 +1,45 @@
-.carousel-inner {
-  height: 400px; // Set breakpoints!
-  .carousel-item {
-    height: 400px;
-    img {
-      width: 100%;
-      object-fit: cover;
+.siema {
+  position: relative;
+  width: 100%;
+  &::after {
+    padding-top: 65%;
+    display: block;
+    content: '';
+  }
+  & > div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+  }
+  & > p {
+    font-family: "FontAwesome" !important;
+    font-size: 3rem;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 3rem;
+  }
+  p.prevArrow {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(120, 120, 120, 0.4));
+  }
+  p.nextArrow {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(120, 120, 120, 0.4));
+  }
+  .gallery-item {
+    position: relative;
+    figcaption {
+      position: absolute;
+      bottom: 0;
     }
   }
 }
