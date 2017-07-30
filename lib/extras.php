@@ -158,3 +158,49 @@ class Social_Icons_Widget extends \WP_Widget {
 
 }
 add_action( 'widgets_init', function() { register_widget( __NAMESPACE__ . '\\Social_Icons_Widget' ); } );
+
+
+/**
+ * Image tags
+ */
+// function image_tags() {
+//   register_taxonomy_for_object_type( 'post_tag', 'attachment' );
+// }
+// add_action( 'init' , __NAMESPACE__ . '\\image_tags' );
+
+
+/**
+ * Create custom image tagging taxonomy.
+ */
+function media_tag() {
+  $labels = [
+    'name'                       => __( 'Media Tags', 'maisontuckerhosue' ),
+    'singular_name'              => __( 'Media Tag', 'maisontuckerhouse' ),
+    'search_items'               => __( 'Search Media Tags', 'maisontuckerhouse' ),
+    'popular_items'              => __( 'Popular Media Tags', 'maisontuckerhouse' ),
+    'all_items'                  => __( 'All Media Tags', 'maisontuckerhouse' ),
+    'edit_item'                  => __( 'Edit Media Tag', 'maisontuckerhouse' ),
+    'view_item'                  => __( 'View Media Tag', 'maisontuckerhouse' ),
+    'update_item'                => __( 'Update Media Tag', 'maisontuckerhouse' ),
+    'add_new_item'               => __( 'Add New Media Tag', 'maisontuckerhouse' ),
+    'new_item_name'              => __( 'New Media Tag Name', 'maisontuckerhouse' ),
+    'separate_items_with_commas' => __( 'Separate media tags with commas', 'maisontuckerhouse' ),
+    'add_or_remove_items'        => __( 'Add or remove media tags', 'maisontuckerhouse' ),
+    'choose_from_most_used'      => __( 'Choose from the most used media tags', 'maisontuckerhouse' ),
+    'not_found'                  => __( 'No media tags found.', 'maisontuckerhouse' ),
+    'no_terms'                   => __( 'No media tags', 'maisontuckerhouse' ),
+  ];
+
+  $args = [
+    'labels'                => $labels,
+    'description'           => __( 'Tags to organize media attachments.', 'maisontuckerhouse' ),
+    'public'                => false,
+    'publicly_queryable'    => false,
+    'hierarchical'          => false,
+    'show_ui'               => true,
+    'show_admin_column'     => true,
+  ];
+
+  register_taxonomy( 'media_tag', 'attachment', $args );
+}
+add_action( 'init', __NAMESPACE__ . '\\media_tag' );
