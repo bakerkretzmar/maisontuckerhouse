@@ -8,13 +8,11 @@ header.banner {
 
 
   // Logo styles
-  .navbar-brand {
-    display: block;
-    height: 108px;
-    width: 210px;
-    min-width: 210px;
-    background-image: url($main-logo-path);
-    background-size: contain;
+  a.navbar-brand {
+    img {
+      width: 15rem;
+      object-fit: contain;
+    }
   }
 
   // .navbar-toggler {
@@ -62,7 +60,7 @@ header.banner {
   .navbar-toggler {
     position: absolute;
     align-self: flex-end;
-    margin-top: 2rem;
+    margin-top: 2.8rem;
   }
 
 
@@ -89,11 +87,11 @@ header.banner {
   li.menu-contact {
     @extend .btn;
     @extend .btn-primary;
-    padding-top: 0.25rem !important;
+    padding-top: .25rem !important;
     padding-right: 1.25rem !important;
-    padding-bottom: 0.25em !important;
+    padding-bottom: .25em !important;
     padding-left: 1.25rem !important;
-    border-radius: 0.5rem;
+    border-radius: .5rem;
     font-weight: 700;
     background-color: $tucker-green;
     border: 2px solid $tucker-green;

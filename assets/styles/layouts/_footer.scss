@@ -1,6 +1,8 @@
 footer.content-info { // Main site footer
 
-  background-color: darken($tucker-green, 26%);
+  $footer-color: #252f1f;
+
+  background-color: $footer-color;
 
   .container {
     padding-top: 2rem;
@@ -21,7 +23,7 @@ footer.content-info { // Main site footer
             &:hover {
               background-color: $gray-lighter;
               text-decoration: none !important;
-              i.fa { color: darken($tucker-green, 26%); }
+              i.fa { color: $footer-color; }
             }
           }
           i.fa { color: $gray-lighter; }
