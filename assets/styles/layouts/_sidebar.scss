@@ -7,6 +7,7 @@ aside.sidebar {
   &.sidebar-primary {
     background-color: $gray-lightest/*rgba(175, 215, 175, 0.2)*/;
     border-radius: .5rem;
+    ul { font-family: $tucker-serif; }
   }
 
 }

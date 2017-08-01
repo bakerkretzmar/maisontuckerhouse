@@ -90,6 +90,13 @@
             instance.addArrows();
             instance.autoPlay();
           }
+
+          var sliderHeight = $('.siema').height();
+          $('.siema .gallery-item figcaption').each(function() {
+            var slideHeight = $(this).parent().height();
+            var captionBottom = (slideHeight / 2) - (sliderHeight / 2);
+            $(this).css('bottom', captionBottom);
+          });
         } // endif ($('.gallery').length)
 
 

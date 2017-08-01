@@ -1,3 +1,18 @@
+footer.sponsors { // Sponsor / partner logo footer
+
+  .container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    p {
+      font-family: $tucker-serif;
+      color: $gray-light;
+      text-align: center;
+    }
+  }
+
+}
+
 footer.content-info { // Main site footer
 
   $footer-color: #252f1f;

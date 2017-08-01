@@ -1,3 +1,4 @@
+<?php if ( get_field('sponsors_footer') ) { get_template_part('templates/footer', 'sponsors'); } ?>
 <footer class="content-info container-fluid">
   <div class="container">
     <div class="row widgets">

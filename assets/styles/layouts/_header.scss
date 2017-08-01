@@ -124,7 +124,8 @@ header.banner {
     background-color: $gray-lighter !important;
     &.menu-item-has-children,
     &.menu-donate,
-    &.menu-contact { background-color: transparent !important; }
+    &.menu-contact,
+    &:active { background-color: transparent !important; }
   }
 
 
