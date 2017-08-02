@@ -24,8 +24,6 @@ class Social_Icons_Widget extends \WP_Widget {
 
     echo $args['before_widget'];
 
-    echo '<div class="social">';
-
     if ( ! empty( $instance['facebook'] ) ) {
       echo '<a href="' . esc_url( $instance['facebook'] ) . '"><i class="fa fa-facebook fa-lg"></i></a>';
     }
@@ -37,8 +35,6 @@ class Social_Icons_Widget extends \WP_Widget {
     if ( ! empty( $instance['instagram'] ) ) {
       echo '<a href="' . esc_url( $instance['instagram'] ) . '"><i class="fa fa-instagram fa-lg"></i></a>';
     }
-
-    echo '</div>';
 
     echo $args['after_widget'];
 

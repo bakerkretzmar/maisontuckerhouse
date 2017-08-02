@@ -38,14 +38,8 @@
   .gallery-item {
     position: relative;
     figcaption {
-      position: absolute;
+      @extend .tucker-caption;
       bottom: 50%;
-      padding: .25rem .5rem;
-      width: 100%;
-      font-family: $tucker-serif;
-      font-size: .875rem !important;
-      color: $gray-lighter !important;
-      background-color: rgba(0, 0, 0, 0.25);
     }
   }
 }

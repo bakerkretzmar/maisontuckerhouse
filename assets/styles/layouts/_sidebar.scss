@@ -1,111 +1,25 @@
 aside.sidebar {
-
-  & > * { margin-top: 1rem; }
-
   height: 100%;
-
+  & > * { margin-top: 1rem; }
   &.sidebar-primary {
     background-color: $gray-lightest/*rgba(175, 215, 175, 0.2)*/;
     border-radius: .5rem;
     ul { font-family: $tucker-serif; }
   }
-
+  .custom-button {
+    width: 100%;
+  }
 }
 
-section.widget {
+.widget {
+  font-family: $tucker-interface !important;
   h3 {
+    // font-family: $tucker-interface;
     font-size: 1.625rem;
     font-weight: 600;
   }
 }
 
-footer section.widget ul { color: $tucker-green; }
-
-section.widget_search {
+.widget_search {
   form[role="search"] { justify-content: center; }
-}
-
-section.widget .social {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  & > a + a { margin-left: .375rem; }
-  @include media-breakpoint-up(lg) {
-    & > a + a { margin-left: 1.25rem; }
-  }
-  @include media-breakpoint-only(sm) {
-    flex-direction: column;
-    & > a + a { margin-top: 1rem; }
-  }
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $tucker-red;
-    border: 2px solid;
-    border-radius: 50%;
-    height: 3rem;
-    width: 3rem;
-    transition: $btn-transition;
-    &:hover {
-      background-color: $tucker-red;
-      i.fa { color: $white; }
-    }
-  }
-  i.fa { color: $tucker-red; }
-  .fa-facebook { font-size: 1.5rem; }
-  .fa-twitter { font-size: 1.5rem; }
-  .fa-instagram { font-size: 1.75rem; }
-}
-
-section.widget .custom-button {
-  width: 100%;
-  padding-top: .25rem !important;
-  padding-right: 1.25rem !important;
-  padding-bottom: .25em !important;
-  padding-left: 1.25rem !important;
-  border-radius: .5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  transition: $btn-transition;
-  background-color: $tucker-green;
-  border: 2px solid $tucker-green;
-  &:hover, &:active {
-    background-color: darken($tucker-green, 10%);
-    border-color: darken($tucker-green, 10%);
-  }
-  a {
-    display: block;
-    white-space: normal;
-    padding: .5em 0;
-    color: $white;
-    letter-spacing: .4px;
-    transition: $btn-transition;
-  }
-  &.red {
-    background-color: $tucker-red;
-    border: 2px solid $tucker-red;
-    &:hover, &:active {
-      background-color: darken($tucker-red, 10%);
-      border-color: darken($tucker-red, 10%);
-    }
-  }
-  &.outline {
-    a {
-      color: $tucker-green;
-      transition: $btn-transition;
-    }
-    background: none;
-    &:hover, &:active {
-      background: none;
-      a { color: darken($tucker-green, 10%); }
-    }
-    &.red {
-      a { color: $tucker-red; }
-      &:hover, &:active {
-        a { color: darken($tucker-red, 10%); }
-      }
-    }
-  }
 }

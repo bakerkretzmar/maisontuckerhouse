@@ -99,6 +99,7 @@ header.banner {
       background-color: darken($tucker-green, 10%);
       border-color: darken($tucker-green, 10%);
     }
+    // THIS LINE IS IMPORTANT DON'T DELETE IT
     &.active { border-color: $tucker-green; }
     transition: $btn-transition;
   }
@@ -127,6 +128,7 @@ header.banner {
     &.menu-contact,
     &:active { background-color: transparent !important; }
   }
+  li:active { background-color: transparent !important; }
 
 
   // Toggle arrows

@@ -1,6 +1,6 @@
 // Grid settings
-$main-sm-columns:       12;
-$sidebar-sm-columns:    4;
+$main-md-columns:       12;
+$sidebar-md-columns:    4;
 
 // Assets
 // $main-logo-path: "../images/logo_wordmark-narrow.svg";
@@ -8,6 +8,7 @@ $sidebar-sm-columns:    4;
 // Colors
 $tucker-red:         #821d1d;
 $tucker-green:       #3e9316;
+$footer-color:       #252f1f;
 
 // Fonts
 $tucker-serif: "Museo Sans";
@@ -20,9 +21,6 @@ $link-hover-color: darken($link-color, 10%);
 $link-hover-decoration: none;
 
 // // Fonts
-// $font-family-sans-serif: "Calluna Sans";
-// $font-family-serif:      "Museo Sans";
-// $font-family-monospace:  "Soleil";
 $font-family-base: $tucker-interface;
 //
 // $headings-font-family:   $font-family-sans-serif;

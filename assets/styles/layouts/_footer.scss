@@ -1,85 +1,64 @@
-footer.sponsors { // Sponsor / partner logo footer
-
+footer.sponsors { // Sponsor & partner logo footer
   .container {
     padding-top: 1rem;
     padding-bottom: 1rem;
-
-    p {
-      font-family: $tucker-serif;
-      color: $gray-light;
-      text-align: center;
-    }
   }
-
+  p {
+    font-family: $tucker-serif;
+    color: $gray-light;
+    text-align: center;
+  }
 }
 
+
 footer.content-info { // Main site footer
-
-  $footer-color: #252f1f;
-
+  color: $gray-lighter;
   background-color: $footer-color;
-
   .container {
     padding-top: 2rem;
     padding-bottom: 2rem;
-
-    .row {
-      .widget {
-        @extend .col-sm;
-        color: $gray-lighter;
-        a {
-          color: $gray-lighter;
-          &:hover { text-decoration: underline; }
-        }
-
-        .social {
-          a {
-            color: $gray-lighter;
-            &:hover {
-              background-color: $gray-lighter;
-              text-decoration: none !important;
-              i.fa { color: $footer-color; }
-            }
-          }
-          i.fa { color: $gray-lighter; }
-        }
+  }
+  ul { color: $tucker-green; }
+  a {
+    color: $gray-lighter;
+    &:hover { border-bottom: 2px solid; }
+  }
+  .widget_social-icons {
+    a {
+      border: 2px solid $gray-lighter;
+      &:hover {
+        background-color: $gray-lighter;
+        .fa { color: $footer-color; }
       }
     }
-
+    .fa { color: $gray-lighter; }
   }
-
+  .custom-button {
+    @include button_fill($gray-lighter, $footer-color);
+    &.outline { @include button_outline($gray-lighter, transparent); }
+    a { border-bottom: none; }
+  }
 }
 
 
 div.colophon { // Colophon (the very very bottom)
-
-
   background-color: #212222;
-
   .container {
-
     padding-top: 1rem;
     padding-bottom: 1rem;
-
-    .row {
-
-      justify-content: space-between;
-      align-items: center;
-
-      p {
-        color: $gray-light;
-        font-family: $tucker-interface;
-        font-size: .75rem;
-        margin: 0;
-        a {
-          color: darken($tucker-green, 10%);
-          &:hover { color: darken($tucker-green, 15%); }
-        }
-      }
-
-    }
-
   }
-
-
+  .row {
+    align-items: center;
+    justify-content: space-between;
+  }
+  p {
+    color: $gray-light;
+    font-family: $tucker-interface;
+    font-size: .75rem;
+    margin: 0;
+  }
+  a {
+    color: $tucker-green;
+    &:hover { border-bottom: 2px solid; }
+  }
 }

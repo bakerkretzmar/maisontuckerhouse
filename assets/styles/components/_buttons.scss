@@ -1,0 +1,36 @@
+.custom-button {
+  @extend .tucker-button;
+  @include button_fill($tucker-green, $white);
+  &.red { @include button_fill($tucker-red, $white); }
+  &.outline {
+    @include button_outline($tucker-green, transparent);
+    &.red { @include button_outline($tucker-red, transparent) }
+  }
+}
+
+.widget_social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  margin: auto;
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $tucker-red;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    transition: $btn-transition;
+    &:hover {
+      background-color: $tucker-red;
+      .fa { color: $white; }
+    }
+  }
+  .fa {
+    color: $tucker-red;
+    font-size: 1.5rem;
+    &.fa-instagram { font-size: 1.75rem; }
+  }
+}

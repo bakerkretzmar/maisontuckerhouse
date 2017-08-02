@@ -1,1 +1,9 @@
-// Use for meta info, archive page display details, etc.
+article,
+.entry-content {
+  @include nice_spacing;
+  a:hover,
+  a:active {
+    color: $tucker-green;
+    border-bottom: 2px solid;
+  }
+}
