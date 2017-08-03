@@ -5,7 +5,7 @@
     </button>
 
     <a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>">
-      <img src="/wp-content/themes/maisontuckerhouse/dist/images/logo_wordmark-narrow.svg" alt="brand">
+      <img src="<?= Roots\Sage\Assets\asset_path('images/logo_wordmark-narrow.svg') ?>" alt="brand">
     </a>
 
     <div class="collapse navbar-collapse" id="tuckerNav">

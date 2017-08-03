@@ -6,4 +6,25 @@ article,
     color: $tucker-green;
     border-bottom: 2px solid;
   }
+  ul { font-family: $tucker-body; }
+}
+
+article header {
+  time,
+  p.byline,
+  p.tags {
+    font-family: $tucker-interface;
+    display: inline-block;
+  }
+  p.tags a {
+    @extend .badge;
+    @extend .badge-default;
+    padding: 3px 4px 2px;
+    font-weight: 600;
+    font-size: .75rem;
+    letter-spacing: .2px;
+    vertical-align: text-bottom;
+    border-bottom: none !important;
+    background-color: lighten($gray-light, 15%);
+  }
 }

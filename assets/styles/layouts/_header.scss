@@ -1,13 +1,8 @@
 header.banner {
-
-  // Text styles
   font-family: $tucker-interface;
   font-weight: 600;
   text-transform: uppercase !important;
   letter-spacing: .4px;
-
-
-  // Logo styles
   a.navbar-brand {
     img {
       width: 15rem;
@@ -15,16 +10,11 @@ header.banner {
     }
   }
 
-  // .navbar-toggler {
-  //   top: 2.6rem;
-  // }
-
-
-  // Menu layout
-  // This works, don't touch it!!
+  // Menu layout — this works, don't touch it!!
   #tuckerNav {
     .navbar-nav {
-      margin-right: auto;
+      width: 100%;
+      @include media-breakpoint-up(lg) { align-items: center; };
       & > li.menu-item {
         @extend .nav-item;
         padding-left: 0.5rem;
@@ -55,83 +45,36 @@ header.banner {
     }
   }// That works, don't touch it!!
 
-
-  // Toggler
   .navbar-toggler {
     position: absolute;
     align-self: flex-end;
     margin-top: 2.8rem;
   }
 
-
-  // Push the "Donate" and "Contact" buttons to the far right
-  @include media-breakpoint-up(lg) {
-    .navbar-nav {
-      align-items: center;
-      width: 100%;
-    }
-    li.menu-donate {
-      margin-left: auto;
-      margin-right: 1rem;
-    }
-  }
-  @include media-breakpoint-down(md) {
-    li.menu-donate {
-      margin-bottom: 1rem;
-    }
-  }
-
-
-  // Buttons
   li.menu-donate,
   li.menu-contact {
-    @extend .btn;
-    @extend .btn-primary;
-    padding-top: .25rem !important;
-    padding-right: 1.25rem !important;
-    padding-bottom: .25em !important;
-    padding-left: 1.25rem !important;
-    border-radius: .5rem;
-    font-weight: 700;
-    background-color: $tucker-green;
-    border: 2px solid $tucker-green;
-    &:hover, &:active {
-      background-color: darken($tucker-green, 10%);
-      border-color: darken($tucker-green, 10%);
-    }
-    // THIS LINE IS IMPORTANT DON'T DELETE IT
-    &.active { border-color: $tucker-green; }
-    transition: $btn-transition;
+    @extend .tucker-button;
+    text-align: center;
   }
   li.menu-donate {
-    a { color: $white; }
+    @include button_fill($tucker-green, $white);
+    margin-left: auto;
+    margin-right: 1rem;
+    @include media-breakpoint-down(md) { margin: .75rem 0 1rem; };
   }
   li.menu-contact {
-    a {
-      color: $tucker-green;
-      transition: $btn-transition;
-    }
-    background: none;
-    &:hover, &:active {
-      background: none;
-      border-color: darken($tucker-green, 10%);
-      a { color: darken($tucker-green, 10%); }
-    }
+    @include button_outline($tucker-green, transparent);
+    @include media-breakpoint-down(md) { margin-bottom: .5rem; };
   }
 
-
-  // Active item
   li.active {
     background-color: $gray-lighter !important;
     &.menu-item-has-children,
     &.menu-donate,
-    &.menu-contact,
-    &:active { background-color: transparent !important; }
+    &.menu-contact { background-color: transparent !important; }
   }
   li:active { background-color: transparent !important; }
 
-
-  // Toggle arrows
   a[data-toggle="dropdown"],
   .dropdown-toggle {
     &::after {
@@ -152,7 +95,4 @@ header.banner {
       margin-top: -1.4rem;
     }
   }
-
-
-
 }

@@ -41,7 +41,7 @@ function setup() {
 
   // Enable gallery post format
   // http://codex.wordpress.org/Post_Formats
-  add_theme_support('post-formats', ['gallery']);
+  // add_theme_support('post-formats', ['gallery']);
 
   // Enable HTML5 markup support
   // http://codex.wordpress.org/Function_Reference/add_theme_support#HTML5

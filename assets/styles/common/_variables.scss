@@ -11,9 +11,9 @@ $tucker-green:       #3e9316;
 $footer-color:       #252f1f;
 
 // Fonts
-$tucker-serif: "Museo Sans";
-$tucker-sans: "Calluna Sans";
-$tucker-interface: "Proxima Nova";
+$tucker-body: 'th-MuseoSans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$tucker-headings: 'th-CallunaSans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$tucker-interface: 'th-ProximaNova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 // Miscellaneous Bootstrap Overrides
 $link-color: $tucker-green;

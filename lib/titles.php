@@ -6,7 +6,7 @@ namespace Roots\Sage\Titles;
  * Page titles
  */
 function title() {
-  if (is_home()) {
+  if (is_home()) {// Returns true for the "Posts Page", e.g. Blog–EN
     if (get_option('page_for_posts', true)) {
       return get_the_title(get_option('page_for_posts', true));
     } else {
@@ -19,6 +19,6 @@ function title() {
   } elseif (is_404()) {
     return __('Not Found', 'maisontuckerhouse');
   } else {
-    return get_the_title();
+    return get_the_title() . ', YO';
   }
 }

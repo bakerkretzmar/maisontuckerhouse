@@ -6,6 +6,7 @@ body#tinymce {
     color: $tucker-green;
     border-bottom: 2px solid;
   }
+  ul { font-family: $tucker-body; }
 
   .wp-caption { position: relative; }
   .wp-caption-dd { @extend .tucker-caption; }

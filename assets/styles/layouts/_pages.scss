@@ -5,4 +5,40 @@
     color: $tucker-green;
     border-bottom: 2px solid;
   }
+  ul { font-family: $tucker-body; }
+}
+
+body.search-results,
+body.archive,
+body.blog {
+  h2.entry-title a {
+    color: $gray-dark;
+    &:hover,
+    &:focus,
+    &:active {
+      color: inherit;
+      border-bottom: 4px solid;
+    }
+  }
+}
+
+nav.posts-navigation {
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-weight: 600;
+    .nav-previous::before {
+      content: '\f0d9';
+      font-family: "FontAwesome";
+      margin-right: .5rem;
+      color: $tucker-green;
+    }
+    .nav-next::after {
+      content: '\f0da';
+      font-family: "FontAwesome";
+      margin-left: .5rem;
+      color: $tucker-green;
+    }
+  }
 }
