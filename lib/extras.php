@@ -122,6 +122,7 @@ function media_tag() {
     'publicly_queryable'    => false,
     'hierarchical'          => false,
     'show_ui'               => true,
+    'meta_box_cb'           => false,
     'show_admin_column'     => true,
   ];
 

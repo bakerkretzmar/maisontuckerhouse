@@ -1,12 +1,24 @@
-footer.sponsors { // Sponsor & partner logo footer
-  .container {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+footer#logoArea { // Sponsor & partner logo footer
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  .row {
+    align-items: center;
+    justify-content: center;
   }
   p {
     font-family: $tucker-body;
     color: $gray-light;
     text-align: center;
+    margin-bottom: .5rem;
+  }
+  div.logo {
+    padding: 2rem;
+    text-align: center;
+    &:not(.wide) {
+      @include media-breakpoint-only(xs) {
+        max-width: 75vw;
+      }
+    }
   }
 }
 

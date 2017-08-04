@@ -6,17 +6,18 @@ Sage documentation is available at [https://roots.io/sage/docs/](https://roots.i
 
 #### TODO
 
-- [ ] Sponsor logo image layout system – ask Diana
-  - [ ] Use image tags
-    - [ ] Add link and tag fields to images with ACF
-  - [ ] Random or chronological order
-  - [ ] Generous whitespace
+- [x] Sponsor logo image layout system – ask Diana
+  - [x] Use image tags
+    - [x] Add link and tag fields to images with ACF
+  - [x] Random or chronological order
+  - [x] Generous whitespace
 - [ ] Home page
 - [ ] Homepage slider with tagged images, chronological order
 - [ ] ~~Make footer buttons actually `$white`~~
 - [ ] ~~Add `-webkit-font-smoothing: antialiased` *everywhere*~~
 - [x] `@font-face` statements in their own file, imported first/second
 - [ ] Figure out `index.php` title issue
+- [ ] Add pretty language switcher link
 
 #### Notes
 
@@ -25,4 +26,4 @@ Sage documentation is available at [https://roots.io/sage/docs/](https://roots.i
   - Blog and Blogue display correctly / as expected
   - Clicking the logo takes you to the home page
   - visiting `/home` or `/accueil` takes you to the correct page, same with `/blog` and `/blogue`
-  - Visiting `/index.php` in either language takes you to the home page for that language, but **visiting `/<lang>/index.php` takes you to a post index/archive page with no special body classes and the title set to the most recent post**
+  - Visiting `/index.php` in either language takes you to the home page for that language, but **visiting `/<lang>/index.php` takes you to a post index/archive page with no special body classes and the title set to the title of the most recent post**

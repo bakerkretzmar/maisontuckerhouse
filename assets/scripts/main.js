@@ -99,6 +99,16 @@
           });
         } // endif ($('.gallery').length)
 
+        if (document.getElementById('logoArea')) {
+          $.each($('#logoArea div.logo'), function() {
+            if (($(this).width() / $(this).height()) > 3) {
+              $(this).removeClass('col-sm-6 col-md-4').addClass('col-sm-12 col-md-12 wide');
+            } else if (($(this).width() / $(this).height()) > 2) {
+              $(this).removeClass('col-sm-6 col-md-4 wide').addClass('col-sm-12 col-md-8');
+            }
+            // $(this).addClass('helo');
+          });
+        }
 
       }
     },
