@@ -1,5 +1,14 @@
 <header class="banner">
   <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <?php
+      $languages = pll_the_languages( ['raw' => 1] );
+      foreach ($languages as $lang) {
+        if ( ! $lang['current_lang'] ) {
+          echo '<a id="langToggle" href="' . esc_url( $lang['url'] ) . '">' . $lang['name'] . '</a>';
+        }
+      }
+    ?>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#tuckerNav" aria-controls="tuckerNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

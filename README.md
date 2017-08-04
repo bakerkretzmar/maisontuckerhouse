@@ -17,7 +17,8 @@ Sage documentation is available at [https://roots.io/sage/docs/](https://roots.i
 - [ ] ~~Add `-webkit-font-smoothing: antialiased` *everywhere*~~
 - [x] `@font-face` statements in their own file, imported first/second
 - [ ] Figure out `index.php` title issue
-- [ ] Add pretty language switcher link
+- [x] Add pretty language switcher link
+  - [ ] Move this somewhere else? Immediately left of the "Donate" button maybe? Breakpoint may need to change then...
 
 #### Notes
 
