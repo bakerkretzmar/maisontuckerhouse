@@ -31,84 +31,73 @@
         if ($('.gallery').length) {
           var galleries = document.querySelectorAll('.gallery');
           for (g = 0; g < galleries.length; g++) {
-            var slider = "siemaSlider-" + g;
-            galleries[g].classList.add('siema');
+            var slider = "siemaGallery-" + g;
+            galleries[g].classList.add('siemaGallery');
             galleries[g].classList.add(slider);
           }
         }
+
+        // Enhance Siema slider prototype
+        Siema.prototype.addArrows = function() {
+          var _this = this; // ES5 workaround
+          // make buttons & append them inside Siema's container
+          this.prevArrow = document.createElement('p');
+          this.nextArrow = document.createElement('p');
+          this.prevArrow.innerHTML = '<span>\uf104</span>';
+          this.nextArrow.innerHTML = '<span>\uf105</span>';
+          this.prevArrow.classList.add('prevArrow');
+          this.nextArrow.classList.add('nextArrow');
+          this.selector.appendChild(this.prevArrow);
+          this.selector.appendChild(this.nextArrow);
+
+          this.prevArrow.addEventListener('click', function() {
+            return _this.prev();
+          });
+          this.nextArrow.addEventListener('click', function() {
+            return _this.next();
+          });
+        };
+
+        Siema.prototype.autoPlay = function(delay) {
+          var _this = this;
+
+          this.autoPlay = setInterval(function() {
+            return _this.next();
+          }, delay);
+
+          this.selector.addEventListener('mouseover', function() {
+            clearInterval(_this.autoPlay);
+          });
+          this.selector.addEventListener('mouseout', function() {
+            _this.autoPlay = setInterval(function() {
+              return _this.next();
+            }, delay);
+          });
+        };
 
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
 
         if ($('.gallery').length) {
-          var siemas = document.querySelectorAll('.siema');
-
-          Siema.prototype.addArrows = function() {
-            var _this = this; // ES5 workaround
-            // make buttons & append them inside Siema's container
-            this.prevArrow = document.createElement('p');
-            this.nextArrow = document.createElement('p');
-            this.prevArrow.innerHTML = '<span>\uf104</span>';
-            this.nextArrow.innerHTML = '<span>\uf105</span>';
-            this.prevArrow.classList.add('prevArrow');
-            this.nextArrow.classList.add('nextArrow');
-            this.selector.appendChild(this.prevArrow);
-            this.selector.appendChild(this.nextArrow);
-
-            this.prevArrow.addEventListener('click', function() {
-              return _this.prev();
-            });
-            this.nextArrow.addEventListener('click', function() {
-              return _this.next();
-            });
-          };
-
-          Siema.prototype.autoPlay = function() {
-            var _this = this;
-
-            this.autoPlay = setInterval(function() {
-              return _this.next();
-            }, 5000);
-
-            this.selector.addEventListener('mouseover', function() {
-              clearInterval(_this.autoPlay);
-            });
-            this.selector.addEventListener('mouseout', function() {
-              _this.autoPlay = setInterval(function() {
-                return _this.next();
-              }, 5000);
-            });
-          };
-
-          for (i = 0; i < siemas.length; i++) {
+          var siemaGalleries = document.querySelectorAll('.gallery');
+          for (i = 0; i < siemaGalleries.length; i++) {
             var instance = new Siema({
-              selector: siemas[i],
+              selector: siemaGalleries[i],
               loop: true,
-              duration: 300
+              duration: 400
             });
             instance.addArrows();
-            instance.autoPlay();
+            instance.autoPlay(5000);
           }
 
-          var sliderHeight = $('.siema').height();
-          $('.siema .gallery-item figcaption').each(function() {
+          var sliderHeight = $('.siemaGallery').height();
+          $('.siemaGallery .gallery-item figcaption').each(function() {
             var slideHeight = $(this).parent().height();
             var captionBottom = (slideHeight / 2) - (sliderHeight / 2);
             $(this).css('bottom', captionBottom);
           });
         } // endif ($('.gallery').length)
-
-        if (document.getElementById('logoArea')) {
-          $.each($('#logoArea div.logo'), function() {
-            if (($(this).width() / $(this).height()) > 3) {
-              $(this).removeClass('col-sm-6 col-md-4').addClass('col-sm-12 col-md-12 wide');
-            } else if (($(this).width() / $(this).height()) > 2) {
-              $(this).removeClass('col-sm-6 col-md-4 wide').addClass('col-sm-12 col-md-8');
-            }
-            // $(this).addClass('helo');
-          });
-        }
 
       }
     },
@@ -119,6 +108,19 @@
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
+        var homeSlider = new Siema({
+          selector: '#siemaHome',
+          loop: true,
+          duration: 600
+        });
+        homeSlider.addArrows();
+        setTimeout(homeSlider.autoPlay(7000), 3000);
+        var homeSliderHeight = $('#siemaHome').height();
+        $('#siemaHome .slide figcaption').each(function() {
+          var slideHeight = $(this).parent().height();
+          var captionBottom = (slideHeight / 2) - (homeSliderHeight / 2);
+          $(this).css('bottom', captionBottom);
+        });
       }
     },
     // About us page, note the change from about-us to about_us.

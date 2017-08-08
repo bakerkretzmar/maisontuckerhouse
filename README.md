@@ -12,7 +12,7 @@ Sage documentation is available at [https://roots.io/sage/docs/](https://roots.i
   - [x] Random or chronological order
   - [x] Generous whitespace
 - [ ] Home page
-- [ ] Homepage slider with tagged images, chronological order
+- [x] Homepage slider with tagged images, chronological order
 - [ ] ~~Make footer buttons actually `$white`~~
 - [ ] ~~Add `-webkit-font-smoothing: antialiased` *everywhere*~~
 - [x] `@font-face` statements in their own file, imported first/second

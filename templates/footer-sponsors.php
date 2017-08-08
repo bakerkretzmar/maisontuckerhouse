@@ -14,7 +14,14 @@
           ],
         ]);
         foreach ($logos as $logo) {
-          echo '<div class="logo col-sm-6 col-md-4"><a class="sponsor" href="' . esc_url( $logo->media_link ) . '" target="_blank">' . wp_get_attachment_image( $logo->ID, 'full' ) . '</a></div>';
+          $meta = wp_get_attachment_metadata( $logo->ID );
+          $classes = 'col-sm-6 col-md-4';
+          if ( ( $meta['width'] / $meta['height'] ) > 3 ) {
+            $classes = 'col-sm-12 col-md-12 wide';
+          } else if ( ( $meta['width'] / $meta['height'] ) > 2 ) {
+            $classes = 'col-sm-12 col-md-8';
+          }
+          echo '<div class="logo ' . $classes . '"><a class="sponsor" href="' . esc_url( $logo->media_link ) . '" target="_blank">' . wp_get_attachment_image( $logo->ID, 'full' ) . '</a></div>';
         };
       ?>
     </div>

@@ -5,14 +5,23 @@ header.banner {
   letter-spacing: .4px;
   a.navbar-brand {
     img {
-      width: 15rem;
+      min-width: 15rem;
+      height: 7.5rem;
+      @include media-breakpoint-down(xs) {
+        min-width: 12rem;
+        height: 6rem;
+      }
       object-fit: contain;
     }
   }
 
+  nav.navbar {
+    background-color: $tucker-background;
+  }
+
   // Menu layout — this works, don't touch it!!
   #tuckerNav {
-    padding-top: .75rem;
+    padding-top: 1.25rem;
     .navbar-nav {
       width: 100%;
       @include media-breakpoint-up(lg) { align-items: center; };
@@ -99,7 +108,7 @@ header.banner {
 
   #langToggle {
     position: absolute;
-    top: 1rem;
+    top: 1.25rem;
     right: 1.25rem;
     color: $gray-light;
     text-transform: capitalize;
@@ -110,5 +119,35 @@ header.banner {
     &:hover,
     &:active,
     &:focus { color: $gray; }
+  }
+}
+
+div.pageBanner {
+  position: relative;
+  padding: 0;
+  height: 20rem;
+  display: flex;
+  overflow: hidden;
+  @include media-breakpoint-only(sm) { height: 14rem; }
+  @include media-breakpoint-down(xs) { height: 10rem; }
+  h1 {
+    position: absolute;
+    width: 100%;
+    padding: 0 2rem;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    font-family: $tucker-headings;
+    font-size: 4.5rem;
+    @include media-breakpoint-only(sm) { font-size: 3.5rem; }
+    @include media-breakpoint-down(xs) { font-size: 2.5rem; }
+    text-shadow: 0 8px 5px rgba(0,0,0,.1),
+                 8px 5px 5px rgba(0,0,0,.1),
+                 -8px 5px 5px rgba(0,0,0,.1);
+    color: $white;
+  }
+  img {
+    object-fit: cover;
   }
 }

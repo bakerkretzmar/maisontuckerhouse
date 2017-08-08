@@ -14,7 +14,7 @@
     </button>
 
     <a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>">
-      <img src="<?= Roots\Sage\Assets\asset_path('images/logo_wordmark-narrow.svg') ?>" alt="brand">
+      <img src="<?= Roots\Sage\Assets\asset_path('images/logo_wordmark-narrow-2.svg') ?>" alt="brand">
     </a>
 
     <div class="collapse navbar-collapse" id="tuckerNav">
@@ -26,3 +26,10 @@
     </div>
   </nav>
 </header>
+<?php
+  if ( is_front_page() ) {
+    get_template_part('templates/header', 'frontpage');
+  } elseif ( is_page() && has_post_thumbnail() ) {
+    get_template_part('templates/header', 'page');
+  }
+?>

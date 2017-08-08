@@ -11,7 +11,7 @@ use Roots\Sage\Wrapper;
   <body <?php body_class(); ?>>
     <!--[if IE]>
       <div class="alert alert-warning">
-        <?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'sage'); ?>
+        <?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'maisontuckerhouse'); ?>
       </div>
     <![endif]-->
     <?php
@@ -23,6 +23,9 @@ use Roots\Sage\Wrapper;
         <main class="main">
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
+        <?php if ( is_front_page() ):
+          get_template_part('templates/content', 'frontpage');
+        endif; ?>
         <?php if (Setup\display_sidebar()) : ?>
           <aside class="sidebar sidebar-primary">
             <?php include Wrapper\sidebar_path(); ?>
