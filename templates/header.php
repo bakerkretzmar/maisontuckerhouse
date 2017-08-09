@@ -27,9 +27,7 @@
   </nav>
 </header>
 <?php
-  if ( is_front_page() ) {
-    get_template_part('templates/header', 'frontpage');
-  } elseif ( is_page() && has_post_thumbnail() ) {
+  if ( is_page() && has_post_thumbnail() ) {
     get_template_part('templates/header', 'page');
   }
 ?>

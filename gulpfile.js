@@ -19,6 +19,7 @@ var runSequence  = require('run-sequence');
 var sass         = require('gulp-sass');
 var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
+var markdown     = require('gulp-markdown');
 
 // See https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('./assets/manifest.json');
@@ -244,6 +245,14 @@ gulp.task('jshint', function() {
 // `gulp clean` - Deletes the build folder entirely.
 gulp.task('clean', require('del').bind(null, [path.dist]));
 
+// ### Docs
+// `gulp docs` - Use gulp-markdown to compile the markdown docs into an HTML file
+gulp.task('docs', function () {
+  return gulp.src('docs.md')
+  .pipe(markdown())
+  .pipe(gulp.dest('.'));
+});
+
 // ### Watch
 // `gulp watch` - Use BrowserSync to proxy your dev server and synchronize code
 // changes across devices. Specify the hostname of your dev server at
@@ -263,6 +272,7 @@ gulp.task('watch', function() {
   gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
   gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
   gulp.watch([path.source + 'images/**/*'], ['images']);
+  gulp.watch(['docs.md'], ['docs']);
   gulp.watch(['bower.json', 'assets/manifest.json'], ['build']);
 });
 
@@ -273,6 +283,7 @@ gulp.task('build', function(callback) {
   runSequence('styles',
               'scripts',
               ['fonts', 'images'],
+              'docs',
               callback);
 });
 

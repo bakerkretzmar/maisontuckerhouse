@@ -43,6 +43,10 @@ function setup() {
   // http://codex.wordpress.org/Post_Formats
   // add_theme_support('post-formats', ['gallery']);
 
+  // Enable pae excerpts
+  // https://codex.wordpress.org/Function_Reference/add_post_type_support
+  add_post_type_support( 'page', 'excerpt' );
+
   // Enable HTML5 markup support
   // http://codex.wordpress.org/Function_Reference/add_theme_support#HTML5
   add_theme_support('html5', ['caption', 'comment-form', 'comment-list', 'gallery', 'search-form']);
@@ -106,11 +110,21 @@ function display_sidebar() {
     // @link https://codex.wordpress.org/Conditional_Tags
     is_404(),
     is_front_page(),
-    is_page_template('template-custom.php'),
   ]);
 
   return apply_filters('maisontuckerhouse/display_sidebar', $display);
 }
+
+/**
+ * Register theme documentation admin page
+ */
+function tuckerhouse_docs() {
+	add_menu_page( __('Theme Documentation', 'maisontuckerhouse'), __('Theme Docs', 'maisontuckerhouse'), 'read', 'tuckerhouse-docs', __NAMESPACE__ . '\\tuckerhouse_docs_render', 'dashicons-info', 85 );
+}
+function tuckerhouse_docs_render() {
+  include get_template_directory() . '/docs.html';
+}
+add_action( 'admin_menu', __NAMESPACE__ . '\\tuckerhouse_docs' );
 
 /**
  * Theme assets
