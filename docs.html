@@ -1,37 +1,53 @@
-<h1 id="hey-there-">Hey there ;)</h1>
-<h1 id="maisontuckerhouse">maisontuckerhouse</h1>
-<h4 id="documentation">Documentation</h4>
-<p>Sage documentation is available at <a href="https://roots.io/sage/docs/">https://roots.io/sage/docs/</a>.</p>
-<h4 id="todo">TODO</h4>
+<p><a id="top"></a></p>
+<h1 id="tucker-house-theme-documentation">Tucker House Theme Documentation</h1>
+<p>Welcome! This page (hopefully!) explains all of the features and functionality of this WordPress theme. If there&#39;s anything missing, look it up on the <a href="https://codex.wordpress.org/">WordPress Codex</a> or email Jacob at <a href="mailto:jacobtbk@gmail.com">jacobtbk@gmail.com</a>.</p>
+<h5 id="contents">Contents</h5>
 <ul>
-<li>[x] Sponsor logo image layout system – ask Diana<ul>
-<li>[x] Use image tags<ul>
-<li>[x] Add link and tag fields to images with ACF</li>
+<li><a href="#pages">Pages</a></li>
+<li><a href="#posts">Posts</a></li>
+<li><a href="#media">Media</a></li>
+<li><a href="#sidebars">Sidebars</a></li>
+<li><a href="#widgets">Widgets</a></li>
+<li><a href="#shortcodes">Shortcodes</a></li>
+<li><a href="#plugins">Plugins</a></li>
+<li><a href="#languages">Languages</a></li>
+<li><a href="#administration">Administration</a></li>
+<li><a href="#miscellaneous">Odds and Ends</a><a id="pages">&nbsp;</a></li>
 </ul>
-</li>
-<li>[x] Random or chronological order</li>
-<li>[x] Generous whitespace</li>
-</ul>
-</li>
-<li>[ ] Home page</li>
-<li>[x] Homepage slider with tagged images, chronological order</li>
-<li>[ ] <del>Make footer buttons actually <code>$white</code></del></li>
-<li>[ ] <del>Add <code>-webkit-font-smoothing: antialiased</code> <em>everywhere</em></del></li>
-<li>[x] <code>@font-face</code> statements in their own file, imported first/second</li>
-<li>[ ] Figure out <code>index.php</code> title issue</li>
-<li>[x] Add pretty language switcher link<ul>
-<li>[ ] Move this somewhere else? Immediately left of the &quot;Donate&quot; button maybe? Breakpoint may need to change then...</li>
-</ul>
-</li>
-</ul>
-<h4 id="notes">Notes</h4>
-<ul>
-<li>Home/Accueil and Blog/Blogue separation works great<ul>
-<li>visiting <code>maisontuckerhouse.dev</code> takes you to the home page, in the language you were in when you last visited</li>
-<li>Blog and Blogue display correctly / as expected</li>
-<li>Clicking the logo takes you to the home page</li>
-<li>visiting <code>/home</code> or <code>/accueil</code> takes you to the correct page, same with <code>/blog</code> and <code>/blogue</code></li>
-<li>Visiting <code>/index.php</code> in either language takes you to the home page for that language, but <strong>visiting <code>/&lt;lang&gt;/index.php</code> takes you to a post index/archive page with no special body classes and the title set to the title of the most recent post</strong></li>
-</ul>
-</li>
-</ul>
+<h5 id="wordpress-codex">WordPress Codex</h5>
+<p>WordPress is open-source and has extensive documentation online, most of which is <em>excellent</em>. The official reference for most things WordPress is the WordPress Codex, at <a href="https://codex.wordpress.org/">codex.wordpress.org</a>. This is a good first place to look for advice about any issues with WordPress, and it&#39;s also a great resource to learn about the features built into WordPress and the various options available to you. These docs will mostly give brief summaries and then link to the Codex, except for the features built specifically for this theme.<a id="pages">&nbsp;</a></p>
+<h2 id="pages">Pages</h2>
+<p>Pages are where all of the main <em>static</em> content of the site goes. Once the site is set up, the pages and their structure and content should rarely change. Pages appear very similar to posts when browsing the site, the main difference being that they don&#39;t display a publication date. Most of the main menu items are pages.</p>
+<h5 id="page-options">Page Options</h5>
+<p>This theme adds a few options to all pages, which appear in a the &quot;Page Options&quot; section of the Page editing screen, in the smaller right-side column:</p>
+<p><strong>Sponsor Logos</strong>: This option allows you to display a footer on the page that shows a thank-you message and the logos of Tucker House&#39;s sponsors and partners. This option is set individually for each page. The images displayed in the sponsor footer are all of the media uploads with the media tag &quot;Sponsor Logo&quot; selected. See the Media section of these docs for more info about tagging media.</p>
+<p><strong>Featured</strong>: This option allows you to feature the page in a &#39;card&#39; on the home page of the site. If checked, the page&#39;s featured image, title, and excerpt will appear in a stylized box on the home page with a &quot;Learn More&quot; button linking to the page. The home page looks best with exactly three featured pages, so don&#39;t feature every page at once!</p>
+<h5 id="excerpt">Excerpt</h5>
+<p>The Page editing screen includes a field called the &quot;Excerpt.&quot; This is a preview or short summary of the content of the page. It&#39;s used to populate the cards on the home page of the site, so it&#39;s only necessary on pages that are featured there. If a page is featured, the excerpt will appear on the card in between the page&#39;s title and the &quot;Learn More&quot; button. If the page is not featured (or if it is and you don&#39;t mind this part of the card being blank), you can leave the Excerpt blank.</p>
+<p><a href="#top" id="posts">Top</a></p>
+<h2 id="posts">Posts</h2>
+<p>Content.</p>
+<p><a href="#top" id="media">Top</a></p>
+<h2 id="media">Media</h2>
+<p>Content.</p>
+<p><a href="#top" id="sidebars">Top</a></p>
+<h2 id="sidebars">Sidebars</h2>
+<p>Sidebars are displayed in the Widgets screen: they are outer boxes in the right-side column. This theme has five sidebars: <strong>Primary</strong>, <strong>Secondary</strong>, <strong>Footer 1</strong>, <strong>Footer 2</strong>, and <strong>Footer 3</strong>. They all behave the same way, they&#39;re just displayed in different places on the site.</p>
+<p>Sidebars are basically &#39;widget areas&#39;—they don&#39;t necessarily show up on the &#39;side&#39; of the site, and they don&#39;t actually do anything on their own, they just let you organize widgets. Every sidebar can contain any number of widgets, which you can add by dragging them in from the left-side column of the Widgets screen.</p>
+<p>The <strong>Primary</strong> sidebar is displayed on the right side of most pages and posts on the site, and typically contains buttons, social links, recent posts, etc. The <strong>Secondary</strong> sidebar is display in exactly the same place but instead of the <strong>Primary</strong> sidebar, on pages where this option has been specifically set. This allows you to tweak the sidebar on a few specific pages.</p>
+<p>The three <strong>Footer</strong> sidebars fill the dark green footer area of the site, and appear on every page. The only reason there are three of them is to make laying out the footer easier—the <strong>Footer</strong> sidebars appear in order as 1/3-width columns.</p>
+<p><a href="#top" id="widgets">Top</a></p>
+<h2 id="widgets">Widgets</h2>
+<p>Content.</p>
+<p><a href="#top" id="shortcodes">Top</a></p>
+<h2 id="shortcodes">Shortcodes</h2>
+<p>Shortcodes are a feature of WordPress that allow you</p>
+<p><a href="#top" id="plugins">Top</a></p>
+<h2 id="plugins">Plugins</h2>
+<p>Content.</p>
+<p><a href="#top" id="admin">Top</a></p>
+<h2 id="administration">Administration</h2>
+<p>Content.</p>
+<p><a href="#top" id="miscellaneous">Top</a></p>
+<h2 id="odds-and-ends">Odds and Ends</h2>
+<p>Content.</p>

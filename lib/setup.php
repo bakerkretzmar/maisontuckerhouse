@@ -71,6 +71,15 @@ function widgets_init() {
   ]);
 
   register_sidebar([
+    'name'          => __('Secondary', 'maisontuckerhouse'),
+    'id'            => 'sidebar-secondary',
+    'before_widget' => '<section class="widget %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>'
+  ]);
+
+  register_sidebar([
     'name'          => __('Footer 1', 'maisontuckerhouse'),
     'id'            => 'sidebar-footer-l',
     'before_widget' => '<section class="widget %1$s %2$s">',
@@ -122,9 +131,34 @@ function tuckerhouse_docs() {
 	add_menu_page( __('Theme Documentation', 'maisontuckerhouse'), __('Theme Docs', 'maisontuckerhouse'), 'read', 'tuckerhouse-docs', __NAMESPACE__ . '\\tuckerhouse_docs_render', 'dashicons-info', 85 );
 }
 function tuckerhouse_docs_render() {
+  echo '<html><head><style>';
+  include get_template_directory() . '/docs.css';
+  echo '</style></head><body>';
   include get_template_directory() . '/docs.html';
+  echo '</body></html>';
 }
 add_action( 'admin_menu', __NAMESPACE__ . '\\tuckerhouse_docs' );
+
+/**
+ * Remove comments menu
+ */
+function hide_comments() {
+  remove_menu_page( 'edit-comments.php' );
+}
+add_action( 'admin_menu', __NAMESPACE__ . '\\hide_comments' );
+
+/**
+ * Allow editors to manage menus and widgets
+ */
+function editor_edits( $caps ) {
+	/* check if the user has the edit_pages capability */
+	if ( ! empty( $caps[ 'edit_pages' ] ) ) {
+		/* give the user the edit theme options capability */
+		$caps[ 'edit_theme_options' ] = true;
+	}
+	return $caps;
+}
+add_filter( 'user_has_cap', __NAMESPACE__ . '\\editor_edits' );
 
 /**
  * Theme assets
