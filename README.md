@@ -10,7 +10,7 @@ Sage documentation is available at [https://roots.io/sage/docs/](https://roots.i
 - [ ] Figure out `index.php` title issue
 - [x] Add pretty language switcher link
   - [ ] Move this somewhere else? Immediately left of the "Donate" button maybe? Breakpoint may need to change then...
-- [ ] Button shortcode (options for colour, style, and block/inline)
+- [ ] Button shortcode (options for colour, style, and block/inline) 
 
 #### Notes
 
