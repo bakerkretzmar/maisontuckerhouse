@@ -6,19 +6,11 @@ Sage documentation is available at [https://roots.io/sage/docs/](https://roots.i
 
 #### TODO
 
-- [x] Sponsor logo image layout system – ask Diana
-  - [x] Use image tags
-    - [x] Add link and tag fields to images with ACF
-  - [x] Random or chronological order
-  - [x] Generous whitespace
 - [ ] Home page
-- [x] Homepage slider with tagged images, chronological order
-- [ ] ~~Make footer buttons actually `$white`~~
-- [ ] ~~Add `-webkit-font-smoothing: antialiased` *everywhere*~~
-- [x] `@font-face` statements in their own file, imported first/second
 - [ ] Figure out `index.php` title issue
 - [x] Add pretty language switcher link
   - [ ] Move this somewhere else? Immediately left of the "Donate" button maybe? Breakpoint may need to change then...
+- [ ] Button shortcode (options for colour, style, and block/inline)
 
 #### Notes
 
