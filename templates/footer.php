@@ -18,7 +18,7 @@
   <div class="container">
     <div class="row credits">
       <p>© 2017 <?= __('Tucker House Renewal Centre', 'maisontuckerhouse'); ?></p>
-      <p><?= __('Powered by ', 'maisontuckerhouse'); ?><a href="<?= esc_url('https://wordpress.org/'); ?>">WordPress</a> | <?= __('Theme by ', 'maisontuckerhouse'); ?><a href="<?= esc_url('https://bakerkretzmar.ca/'); ?>">Jacob Baker-Kretzmar</a></p>
+      <p><?= __('Website design by ', 'maisontuckerhouse'); ?><a href="<?= esc_url('https://bakerkretzmar.ca/'); ?>">Jacob Baker-Kretzmar</a></p>
     </div>
   </div>
 </div>
