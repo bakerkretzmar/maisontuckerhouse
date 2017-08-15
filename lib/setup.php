@@ -148,6 +148,19 @@ function hide_comments() {
 add_action( 'admin_menu', __NAMESPACE__ . '\\hide_comments' );
 
 /**
+ * Admin styles
+ */
+function admin_styles() {
+  echo '<style>
+    table.fixed { table-layout: auto; }
+    img.attachment-thumbnail.size-thumbnail.wp-post-image { display: block; }
+    td.featured_thumb.column-featured_thumb { width: 150px; }
+    td.featured_thumb.column-featured_thumb > a { display: block; }
+  </style>';
+}
+add_action('admin_head', __NAMESPACE__ . '\\admin_styles');
+
+/**
  * Allow editors to manage menus and widgets
  */
 function editor_edits( $caps ) {

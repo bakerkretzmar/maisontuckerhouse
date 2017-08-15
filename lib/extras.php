@@ -81,18 +81,6 @@ function img_unautop($pee) {
 }
 add_filter( 'the_content', __NAMESPACE__ . '\\img_unautop', 30 );
 
-
-
-
-/**
- * Image tags
- */
-// function image_tags() {
-//   register_taxonomy_for_object_type( 'post_tag', 'attachment' );
-// }
-// add_action( 'init' , __NAMESPACE__ . '\\image_tags' );
-
-
 /**
  * Create custom image tagging taxonomy.
  */
@@ -129,3 +117,65 @@ function media_tag() {
   register_taxonomy( 'media_tag', 'attachment', $args );
 }
 add_action( 'init', __NAMESPACE__ . '\\media_tag' );
+
+/**
+ * Add featured image thumbnail to post columns in admin view.
+ */
+function admin_thumbnail_column( $columns ) {
+  $col_sec_1 = array_splice( $columns, 0, 1 );
+  $col_sec_2 = array_slice( $columns, 0, null, true );
+  $col_ins = ['featured_thumb' => 'Thumbnail'];
+  $cols_chunk = array_merge( $col_sec_1, $col_ins );
+  $columns = array_merge( $cols_chunk, $col_sec_2 );
+  // array_splice($columns, 'featured_thumb', 0, 'Thumbnail');
+  // $columns['featured_thumb'] = 'Thumbnail';
+  return $columns;
+}
+function admin_thumbnail_column_data( $column, $post_id ) {
+  switch ( $column ) {
+    case 'featured_thumb':
+    echo '<a href="' . get_edit_post_link() . '">';
+    echo the_post_thumbnail( 'thumbnail' );
+    echo '</a>';
+    break;
+  }
+}
+add_filter( 'manage_posts_columns' , __NAMESPACE__ . '\\admin_thumbnail_column' );
+add_action( 'manage_posts_custom_column' , __NAMESPACE__ . '\\admin_thumbnail_column_data', 10, 2 );
+add_filter( 'manage_pages_columns' , __NAMESPACE__ . '\\admin_thumbnail_column' );
+add_action( 'manage_pages_custom_column' , __NAMESPACE__ . '\\admin_thumbnail_column_data', 10, 2 );
+
+
+// /**
+//  * Add featured image thumbnail to post columns in admin view.
+//  */
+// function add_thumbnail_columns( $columns ) {
+//   $columns = array(
+//     'cb' => '<input type="checkbox" />',
+//     'featured_thumb' => 'Thumbnail',
+//     'title' => 'Title',
+//     'author' => 'Author',
+//     'categories' => 'Categories',
+//     'tags' => 'Tags',
+//     'comments' => '<span class="vers"><div title="Comments" class="comment-grey-bubble"></div></span>',
+//     'date' => 'Date'
+//   );
+//   return $columns;
+// }
+//
+// function add_thumbnail_columns_data( $column, $post_id ) {
+//   switch ( $column ) {
+//     case 'featured_thumb':
+//     echo '<a href="' . get_edit_post_link() . '">';
+//     echo the_post_thumbnail( 'thumbnail' );
+//     echo '</a>';
+//     break;
+//   }
+// }
+//
+// if ( function_exists( 'add_theme_support' ) ) {
+//   add_filter( 'manage_posts_columns' , __NAMESPACE__ . '\\add_thumbnail_columns' );
+//   add_action( 'manage_posts_custom_column' , __NAMESPACE__ . '\\add_thumbnail_columns_data', 10, 2 );
+//   add_filter( 'manage_pages_columns' , __NAMESPACE__ . '\\add_thumbnail_columns' );
+//   add_action( 'manage_pages_custom_column' , __NAMESPACE__ . '\\add_thumbnail_columns_data', 10, 2 );
+// }
