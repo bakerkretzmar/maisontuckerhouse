@@ -99,6 +99,7 @@ div.wrap { margin-top: 2rem; }
     padding: .5em 0;
     letter-spacing: .4px;
     transition: $btn-transition;
+    &:hover, &:active { border-bottom: none !important; }
   }
 }
 @mixin button_outline($fg, $bg) {

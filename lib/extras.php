@@ -117,3 +117,36 @@ add_filter( 'manage_posts_columns' , __NAMESPACE__ . '\\admin_thumbnail_column' 
 add_action( 'manage_posts_custom_column' , __NAMESPACE__ . '\\admin_thumbnail_column_data', 10, 2 );
 add_filter( 'manage_pages_columns' , __NAMESPACE__ . '\\admin_thumbnail_column' );
 add_action( 'manage_pages_custom_column' , __NAMESPACE__ . '\\admin_thumbnail_column_data', 10, 2 );
+
+/**
+ * Custom button shortcode for embedding in posts and pages.
+ */
+function button_shortcode( $atts ) {
+  $args = shortcode_atts( [
+    'title' => '',
+    'link' => '',
+  ], $atts );
+  $button_classes;
+  if ( in_array( 'red', $atts ) ) {
+    $button_classes .= ' red';
+  }
+  if ( in_array( 'outline', $atts ) ) {
+    $button_classes .= ' outline';
+  }
+  if ( in_array( 'block', $atts ) ) {
+    $button_classes .= ' block';
+  }
+
+  $button_output = '<div class="btn btn-primary custom-button';
+  $button_output .= $button_classes;
+  $button_output .= '"><a href="';
+  $button_output .= esc_url( $args['link'] );
+  $button_output .= '">';
+  $button_output .= $args['title'];
+  $button_output .= '</a></div>';
+
+  if ( ( ! empty( $args['title'] ) ) && ( ! empty( $args['link'] ) ) ) {
+    return $button_output;
+  }
+}
+add_shortcode( 'button', __NAMESPACE__ . '\\button_shortcode' );

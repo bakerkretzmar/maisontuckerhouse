@@ -18,6 +18,24 @@
       font-size: 1.25rem;
     }
   }
+  .custom-button {
+    & > a { color: $white !important; }
+    &.outline {
+      & > a { color: $tucker-green !important; }
+      &:hover, &:active {
+        & > a { color: darken($tucker-green, 10%) !important; }
+      }
+    }
+    &.outline.red {
+      & > a { color: $tucker-red !important; }
+      &:hover, &:active {
+        & > a { color: darken($tucker-red, 10%) !important; }
+      }
+    }
+    &.block {
+      width: 100%;
+    }
+  }
 }
 
 body.home {
