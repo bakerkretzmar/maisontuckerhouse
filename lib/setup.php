@@ -76,6 +76,15 @@ function widgets_init() {
   ]);
 
   register_sidebar([
+    'name'          => __('Front Page Cards Area', 'maisontuckerhouse'),
+    'id'            => 'sidebar-frontpage-cards',
+    'before_widget' => '<section class="widget %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>'
+  ]);
+
+  register_sidebar([
     'name'          => __('Footer 1', 'maisontuckerhouse'),
     'id'            => 'sidebar-footer-l',
     'before_widget' => '<section class="widget %1$s %2$s">',
