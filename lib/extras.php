@@ -33,33 +33,6 @@ function excerpt_more() {
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 
 /**
- * Shortcode for email signup form, [signup]
- */
-function email_signup() {
-  $form = '<form id="ctct_signup" action="https://visitor2.constantcontact.com/api/signup" method="post">
-    <input type="hidden" name="ca" value="eacc12e1-dd11-4208-b83a-b89129bed3dd">
-    <div class="input-group">
-      <span class="input-group-addon" id="firstNameLabel">First name:</span>
-      <input name="first_name" type="text" class="form-control" placeholder="Jane" aria-describedby="firstNameLabel" maxlength="50" required>
-    </div>
-    <div class="input-group">
-      <span class="input-group-addon" id="lastNameLabel">Last name:</span>
-      <input name="last_name" type="text" class="form-control" placeholder="Doe" aria-describedby="lastNameLabel" maxlength="50" required>
-    </div>
-    <div class="input-group">
-      <span class="input-group-addon" id="emailLabel">Email:</span>
-      <input name="email" type="email" class="form-control" placeholder="you@yourdomain.com" aria-describedby="emailLabel" maxlength="80" required>
-    </div>
-    <input type="hidden" name="list_0" value="1">
-    <input type="hidden" name="list_1" value="27">
-    <input type="hidden" name="list_2" value="46">
-    <input class="btn btn-outline-primary" type="submit" value="Subscribe">
-  </form>';
-  return $form;
-}
-add_shortcode( 'signup', __NAMESPACE__ . '\\email_signup' );
-
-/**
  * Responsive embeds!
  */
 function responsive_embeds($content) {
@@ -144,38 +117,3 @@ add_filter( 'manage_posts_columns' , __NAMESPACE__ . '\\admin_thumbnail_column' 
 add_action( 'manage_posts_custom_column' , __NAMESPACE__ . '\\admin_thumbnail_column_data', 10, 2 );
 add_filter( 'manage_pages_columns' , __NAMESPACE__ . '\\admin_thumbnail_column' );
 add_action( 'manage_pages_custom_column' , __NAMESPACE__ . '\\admin_thumbnail_column_data', 10, 2 );
-
-
-// /**
-//  * Add featured image thumbnail to post columns in admin view.
-//  */
-// function add_thumbnail_columns( $columns ) {
-//   $columns = array(
-//     'cb' => '<input type="checkbox" />',
-//     'featured_thumb' => 'Thumbnail',
-//     'title' => 'Title',
-//     'author' => 'Author',
-//     'categories' => 'Categories',
-//     'tags' => 'Tags',
-//     'comments' => '<span class="vers"><div title="Comments" class="comment-grey-bubble"></div></span>',
-//     'date' => 'Date'
-//   );
-//   return $columns;
-// }
-//
-// function add_thumbnail_columns_data( $column, $post_id ) {
-//   switch ( $column ) {
-//     case 'featured_thumb':
-//     echo '<a href="' . get_edit_post_link() . '">';
-//     echo the_post_thumbnail( 'thumbnail' );
-//     echo '</a>';
-//     break;
-//   }
-// }
-//
-// if ( function_exists( 'add_theme_support' ) ) {
-//   add_filter( 'manage_posts_columns' , __NAMESPACE__ . '\\add_thumbnail_columns' );
-//   add_action( 'manage_posts_custom_column' , __NAMESPACE__ . '\\add_thumbnail_columns_data', 10, 2 );
-//   add_filter( 'manage_pages_columns' , __NAMESPACE__ . '\\add_thumbnail_columns' );
-//   add_action( 'manage_pages_custom_column' , __NAMESPACE__ . '\\add_thumbnail_columns_data', 10, 2 );
-// }
