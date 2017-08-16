@@ -12,7 +12,7 @@ class Social_Icons_Widget extends \WP_Widget {
   function __construct() {
     parent::__construct(
       'social-icons',  // Base ID
-      'Social Buttons',   // Name
+      'TH Social Buttons',   // Name
       [
         'description' => __( 'A widget to display social icon buttons', 'maisontuckerhouse' ),
         'classname' => 'widget_social-icons',
@@ -87,7 +87,7 @@ class Custom_Button_Widget extends \WP_Widget {
   function __construct() {
     parent::__construct(
       'custom-button',  // Base ID
-      'Custom Button',   // Name
+      'TH Custom Button',   // Name
       [
         'description' => __( 'A widget to create a custom link button', 'maisontuckerhouse' ),
         'classname' => 'widget_custom-button',
