@@ -8,7 +8,7 @@
         [
           'taxonomy' => 'media_tag',
           'field'    => 'slug',
-          'terms'    => 'home_slider',
+          'terms'    => 'frontpage_slider',
         ],
       ],
     ]);
