@@ -7,6 +7,17 @@ body#tinymce {
     border-bottom: 2px solid;
   }
   ul { font-family: $tucker-body; }
+  blockquote:first-child {
+    font-style: normal;
+    color: inherit;
+    font-size: inherit;
+    padding-left: 0;
+    margin-right: 0;
+    border-left: none;
+    p {
+      font-size: 1.25rem;
+    }
+  }
 
   .wp-caption { position: relative; }
   .wp-caption-dd { @extend .tucker-caption; }

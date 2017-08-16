@@ -51,6 +51,17 @@ Content.
 
 Content.
 
+##### Uploading
+
+In general, only upload media files that will be embedded or linked to directly. This WordPress site should not be where you store or organize photos, and you should aim to upload as _little_ media as possible. That being said, when you do upload media files, always upload the full-resolution, highest-quality versions of those files (WordPress and the EWWW plugin automatically resize and compress images for use).
+
+Try to title media files briefly but accurately, and **always** include the title in the `Alt Text` field (this is displayed when the image doesn't load, or to screen-reader technologies). When writing captions, remember that the caption will be attached to that image every time and place that it is displayed, so it should be image-specific, rather than dependent on the context in which the image is being used.
+
+##### Galleries
+
+
+##### Home page slider
+
 
 <a href="#top" id="sidebars">Top</a>
 
