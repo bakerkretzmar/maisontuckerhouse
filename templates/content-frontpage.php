@@ -58,4 +58,24 @@
       }
     } ?>
   </div>
+  <div class="row cta">
+    <div class="col-md-6 cta cta-donate">
+      <h5><i class="fa fa-gift fa-lg" aria-hidden="true"></i></h5>
+      <h3>Donate to Tucker House</h3>
+      <p>Make a tax-deductible gift today to encourage sustainable living and educate local youth for a healthier future.</p>
+      <div class="btn btn-primary custom-button red">
+        <a href="#">Donate Now</a>
+      </div>
+
+    </div>
+    <div class="col-md-6 cta cta-subscribe">
+      <h5><i class="fa fa-envelope-o" aria-hidden="true"></i></h5>
+      <h3>Get the Latest</h3>
+      <p>Want Tucker House in your inbox? Sign up for email updates to receive news,  and opportunities to get involved!</p>
+      <div class="btn btn-primary custom-button green">
+        <a href="#">Subscribe</a>
+      </div>
+
+    </div>
+  </div>
 </div><!-- /.wrap -->

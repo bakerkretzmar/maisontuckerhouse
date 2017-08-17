@@ -42,14 +42,14 @@ body.home {
   div.wrap {
     @extend .container-fluid;
     margin-top: 0;
-    background-image: url('../images/facade.png');
-    background-position: center 38rem;
+    background-image: url('../images/facade2.png');
+    background-position: center 32rem;
     background-repeat: no-repeat;
     background-size: 100% auto;
   }
   div.main.container {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 6rem;
     max-width: 50rem;
   }
   div.row.cards {
@@ -57,9 +57,9 @@ body.home {
     margin: auto;
     max-width: 1100px;
     .card {
-      border: 1px solid $tucker-green;
+      border: 1px solid #b2bbad;
       border-radius: .5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 4rem;
     }
     .card-img-top {
       border-top-right-radius: calc(.5rem - 1px);
@@ -74,6 +74,31 @@ body.home {
       @extend .custom-button;
       text-transform: capitalize;
       font-weight: 600;
+    }
+  }
+  div.row.cta {
+    .cta {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem 3rem;
+      p { margin-bottom: 1rem; }
+    }
+    .cta-donate {
+      $cta-donate-bg: #87c1c3;
+      background: $cta-donate-bg;
+      div.custom-button {
+        & > a { color: $cta-donate-bg !important; }
+      }
+    }
+    .cta-subscribe {
+      $cta-subscribe-bg: #ccb188;
+      background: $cta-subscribe-bg;
+      div.custom-button {
+        & > a { color: $cta-subscribe-bg !important; }
+      }
     }
   }
 }
