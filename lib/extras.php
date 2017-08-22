@@ -55,6 +55,19 @@ function img_unautop($pee) {
 add_filter( 'the_content', __NAMESPACE__ . '\\img_unautop', 30 );
 
 /**
+ * Add advanced editor functionality
+ */
+function advanced_editor_buttons( $buttons ) {
+	// $buttons[] = 'superscript';
+	// $buttons[] = 'subscript';
+  // $buttons[] = 'underline';
+  // $buttons[] = 'indent';
+  // $buttons[] = 'outdent';
+	return $buttons;
+}
+add_filter( 'mce_buttons_2', __NAMESPACE__ . '\\advanced_editor_buttons' );
+
+/**
  * Create custom image tagging taxonomy.
  */
 function media_tag() {

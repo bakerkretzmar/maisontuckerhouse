@@ -99,6 +99,17 @@
           });
         } // endif ($('.gallery').length)
 
+        (function ext_links_new_tab() {
+          if (!document.links) {
+            document.links = document.getElementsByTagName('a');
+          }
+          for (var a = 0; a < document.links.length; a++) {
+            if (/^http/.test(document.links[a]) && !(/tuckerhouse/.test(document.links[a]))) {
+              document.links[a].setAttribute('target', '_blank');
+            }
+          }
+        })();
+
       }
     },
     // Home page

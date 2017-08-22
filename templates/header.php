@@ -28,6 +28,6 @@
 </header>
 <?php
   if ( is_page() && has_post_thumbnail() ) {
-    get_template_part('templates/header', 'page');
+    get_template_part('templates/page', 'banner');
   }
 ?>
