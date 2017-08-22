@@ -87,14 +87,14 @@ body.home {
       p { margin-bottom: 1rem; }
     }
     .cta-donate {
-      $cta-donate-bg: #87c1c3;
+      $cta-donate-bg: #78cccf;
       background: $cta-donate-bg;
       div.custom-button {
         & > a { color: $cta-donate-bg !important; }
       }
     }
     .cta-subscribe {
-      $cta-subscribe-bg: #ccb188;
+      $cta-subscribe-bg: #d2ac72;
       background: $cta-subscribe-bg;
       div.custom-button {
         & > a { color: $cta-subscribe-bg !important; }

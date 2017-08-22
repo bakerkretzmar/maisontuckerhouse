@@ -14,7 +14,7 @@
     </button>
 
     <a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>">
-      <img src="<?= Roots\Sage\Assets\asset_path('images/logo_wordmark-narrow-2.svg') ?>" alt="brand">
+      <img src="<?= Roots\Sage\Assets\asset_path('images/logo-og_wordmark-narrow.svg') ?>" alt="brand">
     </a>
 
     <div class="collapse navbar-collapse" id="tuckerNav">
