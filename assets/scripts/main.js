@@ -104,7 +104,7 @@
             document.links = document.getElementsByTagName('a');
           }
           for (var a = 0; a < document.links.length; a++) {
-            if (/^http/.test(document.links[a]) && !(/tuckerhouse/.test(document.links[a]))) {
+            if ((/^http/.test(document.links[a]) && !(/tuckerhouse/.test(document.links[a]))) || /^mailto/.test(document.links[a])) {
               document.links[a].setAttribute('target', '_blank');
             }
           }
