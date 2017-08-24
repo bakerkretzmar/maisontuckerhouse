@@ -13,7 +13,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>">
+    <a class="navbar-brand" href="<?= esc_url( home_url('/') ); ?>">
       <img src="<?= Roots\Sage\Assets\asset_path('images/logo-og_wordmark-narrow.svg') ?>" alt="brand">
     </a>
 

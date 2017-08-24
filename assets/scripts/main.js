@@ -142,25 +142,25 @@
     },
     'newsletter': {
       init: function() {
-        $("#ctct_signup").submit(function(event) {
-          // stop the form from submitting the normal way and refreshing the page
-          event.preventDefault();
-          // get the form data
-          var formData = $("#ctct_signup").serialize();
-          // process the form
-          $.ajax({
-            type: 'POST',
-            url: 'https://visitor2.constantcontact.com/api/signup',
-            data: formData,
-            dataType: 'json',
-            success: function(data) {
-              $("#ctct_signup").replaceWith("<p>Subscribed! Thanks for joining our mailing list!</p>");
-            },
-            error: function(response) {
-              $("#ctct_signup").replaceWith("<p>The server returned an error: Status " + response.status + ": " + response.responseText + "</p><p>Please <a href=\"mailto:programs@maisontuckerhouse.ca\">contact our webmaster</a> and they will subscribe you manually and fix this error. Thanks!");
-            }
-          });
-        });
+        // $("#ctct_signup").submit(function(event) {
+        //   // stop the form from submitting the normal way and refreshing the page
+        //   event.preventDefault();
+        //   // get the form data
+        //   var formData = $("#ctct_signup").serialize();
+        //   // process the form
+        //   $.ajax({
+        //     type: 'POST',
+        //     url: 'https://visitor2.constantcontact.com/api/signup',
+        //     data: formData,
+        //     dataType: 'json',
+        //     success: function(data) {
+        //       $("#ctct_signup").replaceWith("<p>Subscribed! Thanks for joining our mailing list!</p>");
+        //     },
+        //     error: function(response) {
+        //       $("#ctct_signup").replaceWith("<p>The server returned an error: Status " + response.status + ": " + response.responseText + "</p><p>Please <a href=\"mailto:programs@maisontuckerhouse.ca\">contact our webmaster</a> and they will subscribe you manually and fix this error. Thanks!");
+        //     }
+        //   });
+        // });
       },
       finalize: function() {
 

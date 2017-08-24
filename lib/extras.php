@@ -55,19 +55,6 @@ function img_unautop($pee) {
 add_filter( 'the_content', __NAMESPACE__ . '\\img_unautop', 30 );
 
 /**
- * Add advanced editor functionality
- */
-function advanced_editor_buttons( $buttons ) {
-	// $buttons[] = 'superscript';
-	// $buttons[] = 'subscript';
-  // $buttons[] = 'underline';
-  // $buttons[] = 'indent';
-  // $buttons[] = 'outdent';
-	return $buttons;
-}
-add_filter( 'mce_buttons_2', __NAMESPACE__ . '\\advanced_editor_buttons' );
-
-/**
  * Create custom image tagging taxonomy.
  */
 function media_tag() {
@@ -163,3 +150,79 @@ function button_shortcode( $atts ) {
   }
 }
 add_shortcode( 'button', __NAMESPACE__ . '\\button_shortcode' );
+
+function email_signup() {
+  $form = '<!--Begin CTCT Sign-Up Form-->
+  <!-- EFD 1.0.0 [Wed Aug 23 17:05:00 EDT 2017] -->
+  <div class="ctct-embed-signup">
+    <h6 id="success_message" class="u-hide" style="display: none; text-align: center;">Thanks for signing up!</h6>
+    <form class="ctct-custom-form Form" action="https://visitor2.constantcontact.com/api/signup" method="POST" name="embedded_signup" data-id="embedded_signup:form">
+      <h3>Sign up for Tucker House and Country Fun email newsletters!</h3>
+      <p>Thanks for your interest in the great work of Tucker House. Get to know us, come out for a visit, or volunteer!</p>
+      <p>We send you newsletters and occasional updates on special events and activities, and programs like Country Fun Nature Camp. You can opt out at any time.</p>
+
+      <!-- The following code must be included to ensure your sign-up form works properly. -->
+      <input name="ca" type="hidden" value="481e8452-0d46-480d-80ad-afd1cbf7bb76" data-id="ca:input" />
+      <input name="source" type="hidden" value="EFD" data-id="source:input" />
+      <input name="required" type="hidden" value="list,email" data-id="required:input" />
+      <input name="url" type="hidden" value="" data-id="url:input" />
+
+      <div class="form-group row" data-id="Email Address:p">
+        <label class="ctct-form-required col-sm-3 col-form-label" for="ctctEmail" data-id="Email Address:label" data-name="email">Email Address<span class="text-danger">*</span></label>
+        <div class="col-sm-9">
+          <input class="form-control" id="ctctEmail" maxlength="80" name="email" type="text" value="" data-id="Email Address:input" />
+        </div>
+      </div>
+
+      <div class="form-group row" data-id="First Name:p">
+        <label class="col-sm-3 col-form-label" for="ctctFirstName" data-id="First Name:label" data-name="first_name">First Name</label>
+        <div class="col-sm-9">
+          <input class="form-control" id="ctctFirstName" maxlength="50" name="first_name" type="text" value="" data-id="First Name:input" />
+        </div>
+      </div>
+
+      <div class="form-group row" data-id="Last Name:p">
+        <label class="col-sm-3 col-form-label" for="ctctLastName" data-id="Last Name:label" data-name="last_name">Last Name</label>
+        <div class="col-sm-9">
+          <input class="form-control" id="ctctLastName" maxlength="50" name="last_name" type="text" value="" data-id="Last Name:input" />
+        </div>
+      </div>
+
+      <div class="form-group row" data-id="Lists:p">
+        <label class="ctct-form-required col-sm-3" data-id="Lists:label" data-name="list">Email Lists<span class="text-danger">*</span></label>
+        <div class="col-sm-9">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" name="list_0" type="checkbox" value="27" data-id="Lists:input" /><span data-id="Lists:span">Country Fun Nature Camp Updates</span>
+            </label>
+          </div>
+        </div>
+        <div class="col-sm-9 offset-sm-3">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" name="list_1" type="checkbox" value="1" data-id="Lists:input" /><span data-id="Lists:span">Tucker House Tidbits</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <button class="Button ctct-button Button--block Button-secondary btn btn-primary custom-button block" type="submit" data-enabled="enabled">Sign Up!</button>
+
+      <p class="ctct-form-footer">By submitting this form, you are granting Maison Tucker House (PO Box 4425 Station E, Ottawa, ON, K1S 5B4), permission to email you. You may unsubscribe via the link found at the bottom of every email. (See our <a href="http://www.constantcontact.com/legal/privacy-statement" target="_blank" rel="noopener">Email Privacy Policy</a> for details.) Emails are serviced by Constant Contact.</p>
+    </form>
+  </div>
+  <script type="text/javascript">
+    var localizedErrMap = {};
+    localizedErrMap[\'required\'] = \'This field is required.\';
+    localizedErrMap[\'ca\'] = \'An unexpected error occurred while attempting to send email.\';
+    localizedErrMap[\'email\'] = \'Please enter your email address in name@email.com format.\';
+    localizedErrMap[\'list\'] = \'Please select at least one email list.\';
+    localizedErrMap[\'generic\'] = \'This field is invalid.\';
+    localizedErrMap[\'shared\'] = \'Sorry, we could not complete your sign-up. Please contact us to resolve this.\';
+    var postURL = \'https://visitor2.constantcontact.com/api/signup\';
+  </script>
+  <script src="https://static.ctctcdn.com/h/contacts-embedded-signup-assets/1.0.2/js/signup-form.js"></script>
+  <!--End CTCT Sign-Up Form-->';
+  return $form;
+}
+add_shortcode( 'signupform', __NAMESPACE__ . '\\email_signup' );

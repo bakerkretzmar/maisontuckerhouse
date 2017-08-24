@@ -6,11 +6,16 @@ Sage documentation is available at [https://roots.io/sage/docs/](https://roots.i
 
 #### TODO
 
-- [ ] Home page
-- [ ] Figure out `index.php` title issue
 - [x] Add pretty language switcher link
-  - [ ] Move this somewhere else? Immediately left of the "Donate" button maybe? Breakpoint may need to change then...
-- [ ] Button shortcode (options for colour, style, and block/inline) 
+- [x] Button shortcode (options for colour, style, and block/inline)
+- [ ] Redirect message in French saying that this page isn't in French yet
+- [ ] Link to **much simpler** tutorials and help sites in the docs, not the Codex
+- [ ] Docs: image context
+- [ ] Add thumbnail support to posts, post lists
+- [x] Translatable ACF fields
+- [ ] Search title when there **are** results
+- [ ] Fix image captions inside page edit screen
+- [ ] Try facebook feed in sidebar
 
 #### Notes
 
