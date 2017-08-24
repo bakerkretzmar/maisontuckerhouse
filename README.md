@@ -16,6 +16,8 @@ Sage documentation is available at [https://roots.io/sage/docs/](https://roots.i
 - [ ] Search title when there **are** results
 - [ ] Fix image captions inside page edit screen
 - [ ] Try facebook feed in sidebar
+- [x] Make signup form pretty
+- [ ] DOCS
 
 #### Notes
 
