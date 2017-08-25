@@ -81,6 +81,10 @@ div.wrap { margin-top: 2rem; }
   & > figure + img {
     margin-top: 1rem;
   }
+  // Blocks
+  & > article + article {
+    margin-top: 3rem;
+  }
 }
 
 .tucker-button {

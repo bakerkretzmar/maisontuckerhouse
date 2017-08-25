@@ -15,6 +15,7 @@
 
     <a class="navbar-brand" href="<?= esc_url( home_url('/') ); ?>">
       <img src="<?= Roots\Sage\Assets\asset_path('images/logo-og_wordmark-narrow.svg') ?>" alt="brand">
+      <h6 id="mission"><?= get_bloginfo( 'description' ) ?></h6>
     </a>
 
     <div class="collapse navbar-collapse" id="tuckerNav">

@@ -15,11 +15,12 @@ Sage documentation is available at [https://roots.io/sage/docs/](https://roots.i
 - [x] Translatable ACF fields
 - [x] Search title when there **are** results
 - [x] Fix image captions inside page edit screen
-- [ ] Try facebook feed in sidebar
+- [x] Try facebook feed in sidebar
 - [x] Make signup form pretty
 - [ ] DOCS
   - [ ] Custom sidebars
 - [ ] Check Diana's notes txt
+- [ ] 
 
 #### Notes
 

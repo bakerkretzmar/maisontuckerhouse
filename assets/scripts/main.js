@@ -147,7 +147,7 @@
           onChange: function() {
             $('#siemaHome .slide figcaption').each(function() {
               var slideHeight = $(this).parent().height();
-              var captionBottom = (slideHeight / 2) - (homeSliderHeight / 2);
+              var captionBottom = (slideHeight / 2) - ($('#siemaHome').height() / 2);
               $(this).css('bottom', captionBottom);
             });
           }

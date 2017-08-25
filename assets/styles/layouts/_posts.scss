@@ -28,3 +28,12 @@ article header {
     background-color: lighten($gray-light, 15%);
   }
 }
+
+.th-list { display: inline-block; }
+.th-list-thumbnail {
+  display: inline-block;
+  margin: 0 1rem 0 0;
+}
+.th-post-thumbnail {
+  margin: 0;
+}
