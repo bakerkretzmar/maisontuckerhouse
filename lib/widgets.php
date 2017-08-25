@@ -164,3 +164,71 @@ class Custom_Button_Widget extends \WP_Widget {
 
 }
 add_action( 'widgets_init', function() { register_widget( __NAMESPACE__ . '\\Custom_Button_Widget' ); } );
+
+/**
+ * Facebook feed widget
+ */
+class Facebook_Feed_Widget extends \WP_Widget {
+
+  function __construct() {
+    parent::__construct(
+      'facebook-feed',  // Base ID
+      'TH Facebook Feed',   // Name
+      [
+        'description' => __( 'A widget to embed a Facebook page feed', 'maisontuckerhouse' ),
+        'classname' => 'widget_facebook-feed',
+      ]
+    );
+  }
+
+  public function widget( $args, $instance ) {
+
+    echo $args['before_widget'];
+
+    echo '<div id="feedInsert" data-page="' . $instance['page'] . '" data-style="' . $instance['style'] . '"></div>';
+
+    echo $args['after_widget'];
+
+  }
+
+  public function form( $instance ) {
+
+    $color = ! empty( $instance['page'] ) ? $instance['page'] : esc_html__( '', 'maisontuckerhouse' );
+    $style = ! empty( $instance['style'] ) ? $instance['style'] : esc_html__( '', 'maisontuckerhouse' );
+
+    ?>
+    <p style="display: inline-block; width: 48%;">
+      <label for="<?= esc_attr( $this->get_field_id( 'page' ) ); ?>"><?php esc_attr_e( 'Page:', 'maisontuckerhouse' ); ?></label>
+      <br>
+      <input id="<?= esc_attr( $this->get_field_id( 'page' ) ); ?>" name="<?= esc_attr( $this->get_field_name( 'page' ) ); ?>" type="radio" value="MaisonTuckerHouse" <?php if ($color === 'MaisonTuckerHouse') { echo 'checked="checked"'; } ?>>
+      <label for="<?= esc_attr( $this->get_field_id( 'page' ) ); ?>"><?php esc_attr_e( 'Tucker House', 'maisontuckerhouse' ); ?></label>
+      <br>
+      <input id="<?= esc_attr( $this->get_field_id( 'page' ) ); ?>" name="<?= esc_attr( $this->get_field_name( 'page' ) ); ?>" type="radio" value="CountryFunNatureCamp" <?php if ($color === 'CountryFunNatureCamp') { echo 'checked="checked"'; } ?>>
+      <label for="<?= esc_attr( $this->get_field_id( 'page' ) ); ?>"><?php esc_attr_e( 'Country Fun Nature Camp', 'maisontuckerhouse' ); ?></label>
+    </p>
+    <p style="display: inline-block; width: 48%;">
+      <label for="<?= esc_attr( $this->get_field_id( 'style' ) ); ?>"><?php esc_attr_e( 'Style:', 'maisontuckerhouse' ); ?></label>
+      <br>
+      <input id="<?= esc_attr( $this->get_field_id( 'style' ) ); ?>" name="<?= esc_attr( $this->get_field_name( 'style' ) ); ?>" type="radio" value="image" <?php if ($style === 'image') { echo 'checked="checked"'; } ?>>
+      <label for="<?= esc_attr( $this->get_field_id( 'style' ) ); ?>"><?php esc_attr_e( 'Cover Photo Only', 'maisontuckerhouse' ); ?></label>
+      <br>
+      <input id="<?= esc_attr( $this->get_field_id( 'style' ) ); ?>" name="<?= esc_attr( $this->get_field_name( 'style' ) ); ?>" type="radio" value="tabs" <?php if ($style === 'tabs') { echo 'checked="checked"'; } ?>>
+      <label for="<?= esc_attr( $this->get_field_id( 'style' ) ); ?>"><?php esc_attr_e( 'Cover Photo and Timeline', 'maisontuckerhouse' ); ?></label>
+    </p>
+    <?php
+
+  }
+
+  public function update( $new_instance, $old_instance ) {
+
+    $instance = array();
+
+    $instance['page'] = ( !empty( $new_instance['page'] ) ) ? strip_tags( $new_instance['page'] ) : '';
+    $instance['style'] = ( !empty( $new_instance['style'] ) ) ? strip_tags( $new_instance['style'] ) : '';
+
+    return $instance;
+
+  }
+
+}
+add_action( 'widgets_init', function() { register_widget( __NAMESPACE__ . '\\Facebook_Feed_Widget' ); } );

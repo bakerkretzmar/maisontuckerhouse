@@ -13,8 +13,8 @@ Sage documentation is available at [https://roots.io/sage/docs/](https://roots.i
 - [ ] Docs: image context
 - [ ] Add thumbnail support to posts, post lists
 - [x] Translatable ACF fields
-- [ ] Search title when there **are** results
-- [ ] Fix image captions inside page edit screen
+- [x] Search title when there **are** results
+- [x] Fix image captions inside page edit screen
 - [ ] Try facebook feed in sidebar
 - [x] Make signup form pretty
 - [ ] DOCS

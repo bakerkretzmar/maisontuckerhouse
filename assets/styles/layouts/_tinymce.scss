@@ -20,5 +20,6 @@ body#tinymce {
   }
 
   .wp-caption { position: relative; }
+  .wp-caption .wp-caption-dt img { margin-bottom: 0; }
   .wp-caption-dd { @extend .tucker-caption; }
 }

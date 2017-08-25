@@ -91,6 +91,7 @@
             instance.autoPlay(5000);
           }
 
+          // Make this only run on a slide once it's loaded!
           var sliderHeight = $('.siemaGallery').height();
           $('.siemaGallery .gallery-item figcaption').each(function() {
             var slideHeight = $(this).parent().height();
@@ -110,6 +111,26 @@
           }
         })();
 
+        (function() {
+          var sidebarWidth = $('.content aside.sidebar').width();
+          var iframe = document.createElement('iframe');
+          var page = document.getElementById('feedInsert').getAttribute('data-page');
+          var style = document.getElementById('feedInsert').getAttribute('data-style');
+          var setStyleTabs = '';
+          var setStyleFaces = '&show_facepile=false';
+          if (style === 'tabs') {
+            setStyleTabs = '&tabs=timeline';
+            setStyleFaces = '&show_facepile=true';
+            iframe.setAttribute('height', '600px');
+          }
+          iframe.setAttribute('src', 'https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F' + page + '%2F' + setStyleTabs + '&width=' + sidebarWidth + '&height=600&small_header=false&adapt_container_width=true&hide_cover=false' + setStyleFaces + '&appId=367806483651419');
+          iframe.setAttribute('width', '100%');
+          iframe.setAttribute('style', 'border:none;overflow:hidden;');
+          iframe.setAttribute('scrolling', 'no');
+          iframe.setAttribute('frameborder', '0');
+          iframe.setAttribute('allowTransparency', 'true');
+          $('#feedInsert').append(iframe);
+        })();
       }
     },
     // Home page
@@ -122,7 +143,14 @@
         var homeSlider = new Siema({
           selector: '#siemaHome',
           loop: true,
-          duration: 600
+          duration: 600,
+          onChange: function() {
+            $('#siemaHome .slide figcaption').each(function() {
+              var slideHeight = $(this).parent().height();
+              var captionBottom = (slideHeight / 2) - (homeSliderHeight / 2);
+              $(this).css('bottom', captionBottom);
+            });
+          }
         });
         homeSlider.addArrows();
         setTimeout(homeSlider.autoPlay(7000), 3000);
