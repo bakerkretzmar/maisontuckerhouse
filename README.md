@@ -18,6 +18,8 @@ Sage documentation is available at [https://roots.io/sage/docs/](https://roots.i
 - [ ] Try facebook feed in sidebar
 - [x] Make signup form pretty
 - [ ] DOCS
+  - [ ] Custom sidebars
+- [ ] Check Diana's notes txt
 
 #### Notes
 

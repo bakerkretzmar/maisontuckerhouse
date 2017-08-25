@@ -123,6 +123,7 @@ nav.posts-navigation {
     justify-content: space-between;
     margin-top: 1rem;
     font-weight: 600;
+    .nav-next { margin-left: auto; }
     .nav-previous::before {
       content: '\f0d9';
       font-family: "FontAwesome";

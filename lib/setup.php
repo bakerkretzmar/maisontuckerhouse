@@ -13,7 +13,7 @@ function setup() {
   add_theme_support('soil-clean-up'); // Cleaner markup
   add_theme_support('soil-disable-asset-versioning'); // Disable asset versioning
   add_theme_support('soil-disable-trackbacks'); // Disable trackbacks and pingbacks
-  // add_theme_support('soil-google-analytics', 'UA-XXXXX-Y'); // Google Analytics
+  add_theme_support('soil-google-analytics', 'UA-91641816-2'); // Google Analytics
   add_theme_support('soil-jquery-cdn'); // Load jQuery from the CDN
   add_theme_support('soil-js-to-footer'); // Force all WordPress JS to footer
   add_theme_support('soil-nav-walker'); // Clean navigation menus
