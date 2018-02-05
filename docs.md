@@ -130,7 +130,13 @@ The site is available in English and French thanks to the translation plugin Pol
 
 Translation is also available for media uploads! Many of the media fields, like the Title and Caption, can be translated. WordPress keeps only one copy of the media file itself, but will display the Title, Caption, and other information in English or French based on the context in which it's being displayed.
 
-Some content can't be translated, notably the menu and the static homepage. English and French menus must be created and updated independently. Widgets can be created in English and French, and can individually be set to display on the English site, French site, or both (this is useful if they don't contain any text—for example, social buttons).
+Some content can't be translated, notably the menus and the static homepage. English and French menus must be created and updated independently. Widgets can be created in English and French, and can individually be set to display on the English site, French site, or both (this is useful if they don't contain any text—for example, social buttons). Static content on the homepage can only be updated by editing the theme directly, so email me if this needs to be changed!
+
+##### URL Translation
+
+Links to specific pages on the site are set up to automatically include a prefix for the language: `/en/` or `/fr/`. Because we're using the free version of Polylang, pages must be named different in each language. The silver lining here is that because every page has its own unique name, you don't ever need to type in the language prefix—https://maisontuckerhouse.ca/countryfun/ redirects to https://maisontuckerhouse.ca/en/countryfun/ automatically.
+
+WordPress's two 'special' kinds of pages, the Home page and the Blog page, also support this translation scheme: the English home page is `/home`, the French home page is `/accueil`, the English blog page is `/blog`, and the French blog page is `/blogue`. WordPress obeys the page _name_ you enter, not the language prefix, so visiting `/en/blogue` takes you to the French blog page. Clicking on the Maison Tucker House logo always returns you to the home page in the current language.
 
 <a href="#top">Top</a>
 
@@ -168,5 +174,9 @@ The main navigation menu should be only two levels deep: the first level of menu
 ### Odds and Ends
 
 :-)
+
+##### Bugs
+
+Some WordPress pages can also be visited directly by their full URLs, for example `https://maisontuckerhouse.ca/index.php`. Currently, visiting `/index.php` takes you to the home page in the current language, but if you manually type in the language prefix to try to visit `/en/index.php` or `/fr/index.php`, this causes an error that unfortunately isn't handled nicely with pretty 404 or other error page. I'm not sure if this is due to a bug in Polylang or a bug in my theme, but I'm confident that it's limited to this one specific case and shouldn't cause any issues.
 
 <a href="#top">Top</a>
