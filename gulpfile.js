@@ -249,7 +249,9 @@ gulp.task('clean', require('del').bind(null, [path.dist]));
 // `gulp docs` - Use gulp-markdown to compile the markdown docs into an HTML file
 gulp.task('docs', function () {
   return gulp.src('docs.md')
-  .pipe(markdown())
+  .pipe(markdown({
+    smartypants: true
+  }))
   .pipe(gulp.dest('.'));
 });
 
