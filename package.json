@@ -1,22 +1,15 @@
 {
-  "name": "sage",
-  "version": "8.5.1",
-  "author": "Ben Word <ben@benword.com>",
-  "homepage": "https://roots.io/sage/",
+  "name": "Maison Tucker House",
+  "version": "1.1",
+  "author": "Jacob Baker-Kretzmar <jacob@bakerkretzmar.ca> (https://bakerkretzmar.ca)",
+  "contributors": ["Ben Word <ben@benword.com>"],
+  "homepage": "https://maisontuckerhouse.ca",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/bakerkretzmar/maisontuckerhouse.git"
+    "url": "https://bitbucket.org/bakerkretzmar/maisontuckerhouse"
   },
-  "bugs": {
-    "url": "https://github.com/roots/sage/issues"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://opensource.org/licenses/MIT"
-    }
-  ],
+  "license": "MIT",
   "scripts": {
     "build": "bower install && gulp",
     "jshint": "gulp jshint",

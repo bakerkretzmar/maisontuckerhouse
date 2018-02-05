@@ -1,7 +1,8 @@
 {
-  "name": "sage",
-  "homepage": "https://roots.io/sage/",
+  "name": "Maison Tucker House",
+  "homepage": "https://maisontuckerhouse.ca",
   "authors": [
+    "Jacob Baker-Kretzmar <jacob@bakerkretzmar.ca> (https://bakerkretzmar.ca)",
     "Ben Word <ben@benword.com>"
   ],
   "license": "MIT",
