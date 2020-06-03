@@ -64,7 +64,7 @@
       <h3>Donate to Tucker House</h3>
       <p>Make a tax-deductible gift today to encourage sustainable living and educate local youth for a healthier future.</p>
       <div class="btn btn-primary custom-button red">
-        <a href="<?php echo pll_current_language(); ?>/<?php echo pll_current_language() === 'en' ? 'donate' : 'faire-un-don'; ?>">Donate Now</a>
+        <a href="<?php echo (pll_current_language() === 'en') ? 'donate' : 'faire-un-don'; ?>">Donate Now</a>
       </div>
 
     </div>
@@ -73,7 +73,7 @@
       <h3>Get the Latest</h3>
       <p>Want Tucker House in your inbox? Sign up for email updates to receive news,  and opportunities to get involved!</p>
       <div class="btn btn-primary custom-button green">
-        <a href="<?php echo pll_current_language(); ?>/<?php echo pll_current_language() === 'en' ? 'newsletter' ? 'bulletin'; ?>">Subscribe</a>
+        <a href="<?php echo (pll_current_language() === 'en') ? 'newsletter' : 'bulletin'; ?>">Subscribe</a>
       </div>
 
     </div>
