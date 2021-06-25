@@ -18,7 +18,7 @@
             foreach ($logos as $logo) {
                 $meta = wp_get_attachment_metadata($logo->ID);
 
-                echo '<div class="tw_m-8 tw_text-center"><a href="' . esc_url($logo->media_link) . '" target="_blank">' . wp_get_attachment_image($logo->ID, 'full', false, ['class' => 'tw_w-full tw_max-w-[16rem]']) . '</a></div>';
+                echo '<div class="tw_m-8 tw_text-center"><a href="' . esc_url($logo->media_link) . '" target="_blank">' . wp_get_attachment_image($logo->ID, 'full', false, ['class' => 'tw_w-full tw_max-w-[16rem] ']) . '</a></div>';
             }
         ?>
     </div>
