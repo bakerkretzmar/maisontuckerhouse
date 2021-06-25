@@ -25,15 +25,15 @@ class Social_Icons_Widget extends \WP_Widget {
     echo $args['before_widget'];
 
     if ( ! empty( $instance['facebook'] ) ) {
-      echo '<a href="' . esc_url( $instance['facebook'] ) . '"><i class="fa fa-facebook fa-lg"></i></a>';
+      echo '<a href="' . esc_url( $instance['facebook'] ) . '" target="_blank"><i class="fa fa-facebook fa-lg"></i></a>';
     }
 
     if ( ! empty( $instance['twitter'] ) ) {
-      echo '<a href="' . esc_url( $instance['twitter'] ) . '"><i class="fa fa-twitter fa-lg"></i></a>';
+      echo '<a href="' . esc_url( $instance['twitter'] ) . '" target="_blank"><i class="fa fa-twitter fa-lg"></i></a>';
     }
 
     if ( ! empty( $instance['instagram'] ) ) {
-      echo '<a href="' . esc_url( $instance['instagram'] ) . '"><i class="fa fa-instagram fa-lg"></i></a>';
+      echo '<a href="' . esc_url( $instance['instagram'] ) . '" target="_blank"><i class="fa fa-instagram fa-lg"></i></a>';
     }
 
     echo $args['after_widget'];
