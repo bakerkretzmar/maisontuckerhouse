@@ -189,7 +189,7 @@ function email_signup() {
       </div>
 
       <div class="form-group row" data-id="Lists:p">
-        <label class="ctct-form-required col-sm-3" data-id="Lists:label" data-name="list">Email Lists<span class="text-danger">*</span></label>
+        <label class="ctct-form-required col-sm-3" data-id="Lists:label" data-name="list">' . mth_trans(['en' => 'Email Lists', 'fr' => 'Options']) . '<span class="text-danger">*</span></label>
         <div class="col-sm-9">
           <div class="form-check">
             <label class="form-check-label">
