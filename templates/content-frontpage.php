@@ -81,7 +81,7 @@
     </div>
     <div class="col-md-6 cta cta-subscribe">
       <h5><i class="fa fa-envelope-o" aria-hidden="true"></i></h5>
-      <h3>Get the Latest</h3>
+      <h3><?php echo mth_trans('Want Tucker House in your Inbox?'); ?></h3>
       <p><?php echo mth_trans('Want Tucker House in your Inbox? Subscribe to receive email updates, latest news, and learn how you can get involved! At Tucker House opportunities are endless!'); ?></p>
       <div class="btn btn-primary custom-button green">
         <a href="<?php echo mth_trans(['en' => 'newsletter', 'fr' => 'bulletin']); ?>">
