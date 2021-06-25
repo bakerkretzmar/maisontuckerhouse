@@ -17,7 +17,7 @@
 <div class="colophon container-fluid">
   <div class="container">
     <div class="row credits">
-      <p>© 2017 <?= __('Tucker House Renewal Centre', 'maisontuckerhouse'); ?></p>
+      <p>© <?= date('Y') ?> <?= __('Tucker House Renewal Centre', 'maisontuckerhouse'); ?></p>
       <p><?= __('Website by ', 'maisontuckerhouse'); ?><a href="<?= esc_url('https://bakerkretzmar.ca/'); ?>">Jacob Baker-Kretzmar</a></p>
     </div>
   </div>
