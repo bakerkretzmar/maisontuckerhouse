@@ -1,7 +1,7 @@
 <footer class="tw_w-full tw_py-6 tw_px-4">
     <p class="tw_text-center tw_mb-2"><?php echo mth_trans('Thanks to our sponsors and partners:'); ?></p>
 
-    <div class="tw_flex tw_flex-wrap tw_-mx-4">
+    <div class="tw_flex tw_flex-wrap tw_items-center tw_justify-center tw_-mx-4">
         <?php
             $logos = get_posts([
                 'post_type' => 'attachment',
@@ -18,7 +18,7 @@
             foreach ($logos as $logo) {
                 $meta = wp_get_attachment_metadata($logo->ID);
 
-                echo '<div class="tw_m-8 tw_text-center"><a href="' . esc_url($logo->media_link) . '" target="_blank">' . wp_get_attachment_image($logo->ID, 'full', false, ['class' => 'tw_w-full tw_max-w-xs']) . '</a></div>';
+                echo '<div class="tw_m-8 tw_text-center"><a href="' . esc_url($logo->media_link) . '" target="_blank">' . wp_get_attachment_image($logo->ID, 'full', false, ['class' => 'tw_w-full tw_max-w-[16rem]']) . '</a></div>';
             }
         ?>
     </div>
