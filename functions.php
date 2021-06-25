@@ -45,9 +45,11 @@ if (function_exists('pll_current_language') && ! function_exists('mth_trans')) {
         ];
 
         if (is_string($text)) {
-            if (array_key_exists($text, $translations)) {
+            if (array_key_exists($text, $translations) && pll_current_language() === 'fr') {
                 return $translations[$text];
             }
+
+            return $text;
         } else if (array_key_exists(pll_current_language(), $text)) {
             return $text[pll_current_language()];
         }
