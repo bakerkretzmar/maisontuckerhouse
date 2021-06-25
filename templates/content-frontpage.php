@@ -61,7 +61,11 @@
   <div class="row cta">
     <div class="col-md-6 cta cta-donate">
       <h5><i class="fa fa-gift fa-lg" aria-hidden="true"></i></h5>
-      <h3>Donate to Tucker House</h3><!-- En -->
+      <h3>Donate to Tucker House</h3>
+      <!-- <h3><?php echo mth_translate([
+        'en' => 'Donate to Tucker House',
+        'fr' => 'Faites un don à la Maison Tucker',
+      ]); ?></h3> -->
       <p>Make a tax-deductible gift today to encourage sustainable living and educate local youth for a healthier future.</p>
       <div class="btn btn-primary custom-button red">
         <a href="<?php echo (pll_current_language() === 'en') ? 'donate' : 'faire-un-don'; ?>">Donate Now</a>

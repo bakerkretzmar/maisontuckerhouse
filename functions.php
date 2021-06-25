@@ -27,3 +27,14 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+if (function_exists('pll_current_language') && ! function_exists('mth_translate')) {
+    function mth_translate($translations)
+    {
+        if (array_key_exists(pll_current_language(), $translations)) {
+            return $translations[pll_current_language()];
+        }
+
+        return '';
+    }
+}
