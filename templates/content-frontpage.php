@@ -1,36 +1,45 @@
-<?php use Roots\Sage\Wrapper; ?>
-<div class="wrap container-fluid" role="document">
-  <div class="slider row">
-    <?php $slides = get_posts([
-      'post_type' => 'attachment',
-      'numberposts' => '-1',
-      'tax_query' => [
-        [
-          'taxonomy' => 'media_tag',
-          'field'    => 'slug',
-          'terms'    => 'frontpage_slider',
-        ],
-      ],
-    ]);
+<?php use function Roots\Sage\Wrapper\template_path; ?>
 
-    if ( $slides ) {
-      echo '<div id="siemaHome">';
-      foreach ($slides as $slide) {
-        echo '<div><figure class="slide">';
-        echo '<div class="slide-image">' . wp_get_attachment_image( $slide->ID, 'full' ) . '</div>';
-        $description;
-        if ( $slide->post_excerpt ) {
-          $description = apply_filters( 'the_content', $slide->post_excerpt);
-        }
-        echo '<figcaption><h1><a href="' . esc_url( $slide->media_link ) . '">' . apply_filters( 'the_title', $slide->post_title ) . '</a></h1>' . $description . '</figcaption>';
-        echo '</figure></div>';
-      };
-      echo "</div>";
-    } ?>
-  </div>
-  <div class="main container">
+<div class="wrap container-fluid" role="document">
+    <div class="slider row">
+        <?php
+            $slides = get_posts([
+                'post_type' => 'attachment',
+                'numberposts' => '-1',
+                'tax_query' => [
+                    [
+                        'taxonomy' => 'media_tag',
+                        'field' => 'slug',
+                        'terms' => 'frontpage_slider',
+                    ],
+                ],
+            ]);
+
+            if ($slides) {
+                echo '<div id="siemaHome">';
+
+                foreach ($slides as $slide) {
+                    echo '<div><figure class="slide">';
+                    echo '<div class="slide-image">' . wp_get_attachment_image($slide->ID, 'full', false, ['class' => 'tw_w-full']) . '</div>';
+
+                    $description = '';
+
+                    if ($slide->post_excerpt) {
+                        $description = apply_filters('the_content', $slide->post_excerpt);
+                    }
+
+                    echo '<figcaption><h1><a href="' . esc_url($slide->media_link) . '">' . apply_filters('the_title', $slide->post_title) . '</a></h1>' . $description . '</figcaption>';
+                    echo '</figure></div>';
+                }
+
+                echo "</div>";
+            }
+        ?>
+    </div>
+
+<div class="main container">
     <main class="main">
-      <?php include Wrapper\template_path(); ?>
+      <?php include template_path(); ?>
     </main>
   </div>
   <div class="row cards">
