@@ -157,9 +157,9 @@ function email_signup() {
   <div class="ctct-embed-signup">
     <h6 id="success_message" class="u-hide" style="display: none; text-align: center;">Thanks for signing up!</h6>
     <form class="ctct-custom-form Form" action="https://visitor2.constantcontact.com/api/signup" method="POST" name="embedded_signup" data-id="embedded_signup:form">
-      <h3>Sign up for Tucker House and Country Fun email newsletters!</h3>
-      <p>Thanks for your interest in the great work of Tucker House. Get to know us, come out for a visit, or volunteer!</p>
-      <p>We send you newsletters and occasional updates on special events and activities, and programs like Country Fun Nature Camp. You can opt out at any time.</p>
+      <h3>' . mth_trans('Sign up for Tucker House and Country Fun email newsletters!') . '</h3>
+      <p>' . mth_trans('We thank you for your interest in the great work of Tucker House. Get to know us, come out for a visit, or volunteer!') . '</p>
+      <p>' . mth_trans('We send you newsletters and occasional updates on special events, activities, and programs like Country Fun Nature Camp. You can also opt out at any time.') . '</p>
 
       <!-- The following code must be included to ensure your sign-up form works properly. -->
       <input name="ca" type="hidden" value="481e8452-0d46-480d-80ad-afd1cbf7bb76" data-id="ca:input" />
@@ -168,21 +168,21 @@ function email_signup() {
       <input name="url" type="hidden" value="" data-id="url:input" />
 
       <div class="form-group row" data-id="Email Address:p">
-        <label class="ctct-form-required col-sm-3 col-form-label" for="ctctEmail" data-id="Email Address:label" data-name="email">Email Address<span class="text-danger">*</span></label>
+        <label class="ctct-form-required col-sm-3 col-form-label" for="ctctEmail" data-id="Email Address:label" data-name="email">' . mth_trans(['en' => 'Email Address', 'fr' => 'Adresse courriel']) . '<span class="text-danger">*</span></label>
         <div class="col-sm-9">
           <input class="form-control" id="ctctEmail" maxlength="80" name="email" type="text" value="" data-id="Email Address:input" />
         </div>
       </div>
 
       <div class="form-group row" data-id="First Name:p">
-        <label class="col-sm-3 col-form-label" for="ctctFirstName" data-id="First Name:label" data-name="first_name">First Name</label>
+        <label class="col-sm-3 col-form-label" for="ctctFirstName" data-id="First Name:label" data-name="first_name">' . mth_trans(['en' => 'First Name', 'fr' => 'Prénom']) . '</label>
         <div class="col-sm-9">
           <input class="form-control" id="ctctFirstName" maxlength="50" name="first_name" type="text" value="" data-id="First Name:input" />
         </div>
       </div>
 
       <div class="form-group row" data-id="Last Name:p">
-        <label class="col-sm-3 col-form-label" for="ctctLastName" data-id="Last Name:label" data-name="last_name">Last Name</label>
+        <label class="col-sm-3 col-form-label" for="ctctLastName" data-id="Last Name:label" data-name="last_name">' . mth_trans(['en' => 'Last Name', 'fr' => 'Nom de famille']) . '</label>
         <div class="col-sm-9">
           <input class="form-control" id="ctctLastName" maxlength="50" name="last_name" type="text" value="" data-id="Last Name:input" />
         </div>
@@ -193,22 +193,25 @@ function email_signup() {
         <div class="col-sm-9">
           <div class="form-check">
             <label class="form-check-label">
-              <input class="form-check-input" name="list_0" type="checkbox" value="27" data-id="Lists:input" /><span data-id="Lists:span">Country Fun Nature Camp Updates</span>
+              <input class="form-check-input" name="list_0" type="checkbox" value="27" data-id="Lists:input" /><span data-id="Lists:span">' . mth_trans(['en' => 'Country Fun Nature Camp Updates', 'fr' => 'Mise à jour Country Fun Nature Camp']) . '</span>
             </label>
           </div>
         </div>
         <div class="col-sm-9 offset-sm-3">
           <div class="form-check">
             <label class="form-check-label">
-              <input class="form-check-input" name="list_1" type="checkbox" value="1" data-id="Lists:input" /><span data-id="Lists:span">Tucker House Tidbits</span>
+              <input class="form-check-input" name="list_1" type="checkbox" value="1" data-id="Lists:input" /><span data-id="Lists:span">' . mth_trans(['en' => 'Tucker House Tidbits', 'fr' => 'E-Tidbits Maison Tucker']) . '</span>
             </label>
           </div>
         </div>
       </div>
 
-      <button class="Button ctct-button Button--block Button-secondary btn btn-primary custom-button block" type="submit" data-enabled="enabled">Sign Up!</button>
+      <button class="Button ctct-button Button--block Button-secondary btn btn-primary custom-button block" type="submit" data-enabled="enabled">' . mth_trans(['en' => 'Sign Up!', 'fr' => 'Abonnez-vous!']) . '</button>
 
-      <p class="ctct-form-footer">By submitting this form, you are granting Maison Tucker House (PO Box 4425 Station E, Ottawa, ON, K1S 5B4), permission to email you. You may unsubscribe via the link found at the bottom of every email. (See our <a href="http://www.constantcontact.com/legal/privacy-statement" target="_blank" rel="noopener">Email Privacy Policy</a> for details.) Emails are serviced by Constant Contact.</p>
+      <p class="ctct-form-footer">' . mth_trans([
+        'en' => 'By submitting this form, you are granting Maison Tucker House (PO Box 4425 Station E, Ottawa, ON, K1S 5B4), permission to email you. You may unsubscribe via the link found at the bottom of every email. (See our <a href="http://www.constantcontact.com/legal/privacy-statement" target="_blank" rel="noopener">Email Privacy Policy</a> for details.) Emails are serviced by Constant Contact.',
+        'fr' => 'En remplissant ce formulaire, vous donnez accès à la Maison Tucker House (PO Box 4425 Station E, Ottawa, ON, K1S 5B4), de vous envoyer des courriels. Vous pouvez vous désabonner grâce au lien inclus à la fin de chaque courriel. (Consultez notre <a href="http://www.constantcontact.com/legal/privacy-statement" target="_blank" rel="noopener">politique de confidentialité</a> des courriels pour plus de détails.) Les courriels sont gérés par Constant Contact.',
+        ]) . '</p>
     </form>
   </div>
   <script type="text/javascript">

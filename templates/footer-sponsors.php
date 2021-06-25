@@ -1,5 +1,5 @@
 <footer id="logoArea" class="container-fluid">
-    <p><?= __('Thanks to our sponsors and partners:', 'maisontuckerhouse'); ?></p>
+    <p><?php echo mth_trans('Thanks to our sponsors and partners:'); ?></p>
     <div class="row no-gutters">
       <?php
         $logos = get_posts([

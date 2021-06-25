@@ -61,23 +61,23 @@
   <div class="row cta">
     <div class="col-md-6 cta cta-donate">
       <h5><i class="fa fa-gift fa-lg" aria-hidden="true"></i></h5>
-      <h3>Donate to Tucker House</h3>
-      <!-- <h3><?php echo mth_translate([
-        'en' => 'Donate to Tucker House',
-        'fr' => 'Faites un don à la Maison Tucker',
-      ]); ?></h3> -->
-      <p>Make a tax-deductible gift today to encourage sustainable living and educate local youth for a healthier future.</p>
+      <h3><?php echo mth_trans('Donate to Tucker House'); ?></h3>
+      <p><?php echo mth_trans('Make a tax-deductible gift today to encourage sustainable living and educate local youth for a healthier future.'); ?></p>
       <div class="btn btn-primary custom-button red">
-        <a href="<?php echo (pll_current_language() === 'en') ? 'donate' : 'faire-un-don'; ?>">Donate Now</a>
+        <a href="<?php echo mth_trans(['en' => 'donate', 'fr' => 'faire-un-don']); ?>">
+          <?php echo mth_trans('Donate Now'); ?>
+        </a>
       </div>
 
     </div>
     <div class="col-md-6 cta cta-subscribe">
       <h5><i class="fa fa-envelope-o" aria-hidden="true"></i></h5>
       <h3>Get the Latest</h3>
-      <p>Want Tucker House in your inbox? Sign up for email updates to receive news,  and opportunities to get involved!</p>
+      <p><?php echo mth_trans('Want Tucker House in your Inbox? Subscribe to receive email updates, latest news, and learn how you can get involved! At Tucker House opportunities are endless!'); ?></p>
       <div class="btn btn-primary custom-button green">
-        <a href="<?php echo (pll_current_language() === 'en') ? 'newsletter' : 'bulletin'; ?>">Subscribe</a>
+        <a href="<?php echo mth_trans(['en' => 'newsletter', 'fr' => 'bulletin']); ?>">
+          <?php echo mth_trans('Subscribe'); ?>
+        </a>
       </div>
 
     </div>
