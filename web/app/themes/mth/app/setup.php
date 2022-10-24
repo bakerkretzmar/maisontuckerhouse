@@ -10,8 +10,6 @@ use function Roots\bundle;
 
 /**
  * Register the theme assets.
- *
- * @return void
  */
 add_action('wp_enqueue_scripts', function () {
     bundle('app')->enqueue();
@@ -19,8 +17,6 @@ add_action('wp_enqueue_scripts', function () {
 
 /**
  * Register the theme assets with the block editor.
- *
- * @return void
  */
 add_action('enqueue_block_editor_assets', function () {
     bundle('editor')->enqueue();
@@ -28,8 +24,6 @@ add_action('enqueue_block_editor_assets', function () {
 
 /**
  * Register the initial theme setup.
- *
- * @return void
  */
 add_action('after_setup_theme', function () {
     /**
@@ -39,6 +33,8 @@ add_action('after_setup_theme', function () {
      */
     add_theme_support('soil', [
         'clean-up',
+        'disable-rest-api',
+        'google-analytics' => 'UA-91641816-2',
         'nav-walker',
         'nice-search',
         'relative-urls',
@@ -57,7 +53,7 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'sage'),
+        'primary_navigation' => __('Primary Navigation', 'mth'),
     ]);
 
     /**
@@ -113,8 +109,6 @@ add_action('after_setup_theme', function () {
 
 /**
  * Register the theme sidebars.
- *
- * @return void
  */
 add_action('widgets_init', function () {
     $config = [
@@ -125,12 +119,22 @@ add_action('widgets_init', function () {
     ];
 
     register_sidebar([
-        'name' => __('Primary', 'sage'),
+        'name' => __('Primary', 'mth'),
         'id' => 'sidebar-primary',
     ] + $config);
 
     register_sidebar([
-        'name' => __('Footer', 'sage'),
-        'id' => 'sidebar-footer',
+        'name' => __('Footer 1', 'mth'),
+        'id' => 'sidebar-footer-l',
+    ] + $config);
+
+    register_sidebar([
+        'name' => __('Footer 2', 'mth'),
+        'id' => 'sidebar-footer-m',
+    ] + $config);
+
+    register_sidebar([
+        'name' => __('Footer 3', 'mth'),
+        'id' => 'sidebar-footer-r',
     ] + $config);
 });

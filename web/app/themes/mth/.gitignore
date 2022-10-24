@@ -1,7 +1,6 @@
 /node_modules
-/vendor
 /public
-.env
+/vendor
 .budfiles
+.env
 npm-debug.log
-yarn-error.log

@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-  @include('partials.page-header')
+    @include('partials.page-header')
 
-  @if (! have_posts())
-    <x-alert type="warning">
-      {!! __('Sorry, but the page you are trying to view does not exist.', 'sage') !!}
-    </x-alert>
+    @noposts
+        <x-alert type="warning">
+            {!! __('Sorry, the page you were trying to visit does not exist.', 'mth') !!}
+        </x-alert>
 
-    {!! get_search_form(false) !!}
-  @endif
+        {!! get_search_form(false) !!}
+    @endnoposts
 @endsection
