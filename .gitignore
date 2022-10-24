@@ -2,7 +2,9 @@
 /vendor
 /web/app/cache/*
 /web/app/mu-plugins/*/
+/web/app/updraft
 /web/app/upgrade
+/web/app/wflogs
 /web/wp
 /web/.htaccess
 *.log
