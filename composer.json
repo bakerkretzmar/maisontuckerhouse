@@ -22,7 +22,8 @@
         "roots/wp-password-bcrypt": "1.1.0",
         "vlucas/phpdotenv": "^5.4",
         "wp-cli/wp-cli-bundle": "^2.7",
-        "wpackagist-plugin/advanced-custom-fields": "^6.0"
+        "wpackagist-plugin/advanced-custom-fields": "^6.0",
+        "wpackagist-plugin/classic-editor": "^1.6"
     },
     "extra": {
         "installer-paths": {
