@@ -1,6 +1,7 @@
 /misc
 /vendor
 /web/app/cache/*
+/web/app/ewww
 /web/app/mu-plugins/*/
 /web/app/updraft
 /web/app/upgrade
