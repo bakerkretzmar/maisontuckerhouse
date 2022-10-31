@@ -11,29 +11,26 @@ class App extends Composer
      *
      * @var array
      */
-    protected static $views = [
-        '*',
-    ];
+    protected static $views = ['*'];
 
     /**
      * Data to be passed to view before rendering.
-     *
-     * @return array
      */
-    public function with()
+    public function with(): array
     {
         return [
             'siteName' => $this->siteName(),
+            'siteDescription' => $this->siteDescription(),
         ];
     }
 
-    /**
-     * Returns the site name.
-     *
-     * @return string
-     */
-    public function siteName()
+    public function siteName(): string
     {
         return get_bloginfo('name', 'display');
+    }
+
+    public function siteDescription(): string
+    {
+        return get_bloginfo('description', 'display');
     }
 }
