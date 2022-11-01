@@ -1171,6 +1171,21 @@
           "name": "Ui-monospace",
           "slug": "mono",
           "fontFamily": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace"
+        },
+        {
+          "name": "Museo-sans",
+          "slug": "museo",
+          "fontFamily": "museo-sans,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\""
+        },
+        {
+          "name": "Calluna-sans",
+          "slug": "calluna",
+          "fontFamily": "calluna-sans,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\""
+        },
+        {
+          "name": "Proxima-nova",
+          "slug": "proxima",
+          "fontFamily": "proxima-nova,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\""
         }
       ],
       "fontSizes": [
